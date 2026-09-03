@@ -5,7 +5,7 @@ and technology skills for industry success.
 
 ## About
 
-UNO AI Technical College is a specialized division dedicated to technical skills training, offering certificate courses, diploma programs, and bootcamps in AI, data analytics, and full-stack development, backed by a dedicated placement team with a 90%+ placement rate.
+UNO AI Technical College is an independent education initiative within the broader GNAIAAAC technology and learning ecosystem. It offers certificate courses, diploma programs, and bootcamps in AI, data analytics, and full-stack development. UNO AI Technical College maintains its own programs, admissions process, academic policies, and institutional identity.
 
 ## Site Structure
 
