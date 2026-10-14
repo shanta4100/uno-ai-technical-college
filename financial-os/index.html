@@ -71,6 +71,23 @@
       </div>
     </section>
 
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Financial data boundaries</p>
+        <h2>Six domains, connected without conflating evidence</h2>
+        <p>The proposed architecture separates authoritative records from operational and analytical data. Each domain needs its own source, purpose, controls, and evidence.</p>
+      </div>
+      <div class="card-grid">
+        <article class="card"><h3>1 · System of record</h3><p>Posted accounting records and financial statements, governed by accounting policy and controls.</p></article>
+        <article class="card"><h3>2 · Treasury &amp; money operations</h3><p>Cash, settlement, and payment workflows; fund movement remains with authorized institutions/providers.</p></article>
+        <article class="card"><h3>3 · Market intelligence</h3><p>Time-stamped observations for equities, bonds, FX, commodities, and digital assets; not accounting facts.</p></article>
+        <article class="card"><h3>4 · Research &amp; forecasting</h3><p>Models and scenarios with recorded inputs, assumptions, versions, horizons, and uncertainty.</p></article>
+        <article class="card"><h3>5 · Validation history</h3><p>Proposed records of forecast outcomes, actual comparisons, errors, corrections, and human overrides.</p></article>
+        <article class="card"><h3>6 · Governance</h3><p>Identity, policy, security, risk, approvals, audit, and compliance review across the other domains.</p></article>
+      </div>
+      <div class="callout"><strong>Accounting facts ≠ market observations ≠ forecasts ≠ research scenarios ≠ AI recommendations.</strong> Analytics and simulations must not silently become posted accounting records.</div>
+    </section>
+
     <section class="section" id="modules">
       <div class="section-heading">
         <p class="eyebrow">Proposed modules</p>
@@ -124,6 +141,7 @@
             <li>Inventory records, costing methods, and manufacturing variance analysis</li>
             <li>Reconciliation between subledgers and general-ledger control accounts</li>
           </ul>
+          <div class="callout"><strong>Invoice matching is policy-driven.</strong> Two-, three-, or four-way matching requires defined tolerances, inspection criteria, and an exception/review path; amounts or quantities need not always be literally identical.</div>
         </article>
         <article class="module">
           <h3>Payroll &amp; workforce costing</h3>
@@ -141,7 +159,7 @@
         </article>
         <article class="module">
           <h3>Financial intelligence</h3>
-          <p>Proposed KPI reporting, scenario analysis, statistical research, and decision support. Forecasts and models must be identified as such and must not be presented as accounting results.</p>
+          <p>Proposed KPI reporting, scenario analysis, statistical research, and decision support. Forecasts and models must be identified as such and must not be presented as accounting results. Forecast evaluation could retain model/version, horizon, assumptions, actual outcome, and error metrics.</p>
         </article>
         <article class="module">
           <h3>Enterprise performance management</h3>
@@ -167,7 +185,7 @@
             <tr><th scope="row">3 · Transaction processing</th><td>Capture → verify → validate → classify → assess tax/risk → approve → post → execute through authorized channels → reconcile → audit. Unbalanced or unauthorized entries should be rejected and retained as reviewable exceptions.</td></tr>
             <tr><th scope="row">4 · General ledger</th><td>Journal header and lines → validation (debits = credits) → posting → trial balance and statements. Reconcile control accounts to their subledgers.</td></tr>
             <tr><th scope="row">5 · Procurement &amp; AP</th><td>Request → approval → vendor → purchase order → receipt → invoice match → payment workflow → ledger → audit. Proposed controls: no approved vendor/no payment; no valid invoice/no liability; suspected duplicate/hold; bank change/independent verification; AP subledger reconciles to the GL control account.</td></tr>
-            <tr><th scope="row">6 · AR &amp; revenue assurance</th><td>Customer/contract → delivery → billing → receivable → collection → cash application → reconciliation. Proposed controls distinguish invoice from revenue recognition, require documented billing events, reconcile AR to GL, and distinguish forecast from recognized revenue.</td></tr>
+            <tr><th scope="row">6 · AR &amp; revenue assurance</th><td>Customer/contract → delivery → billing → receivable → collection → cash application → reconciliation. Proposed controls distinguish invoice from revenue recognition, require documented billing events, reconcile AR to GL, and distinguish forecast from recognized revenue. Credit models should retain inputs/version/reviewer; AI recommendations must not automatically freeze material customer relationships.</td></tr>
             <tr><th scope="row">7 · Inventory &amp; manufacturing (planned)</th><td>Demand → procurement → receiving → warehouse → production/WIP → finished goods → sale/COGS → ledger. Potential scope includes costing methods, lot/serial controls, freight, planning, and reconciliation. Inventory roll-forward: beginning + purchases + production receipts − sales − usage − write-offs ± adjustments = ending, subject to defined accounting policies.</td></tr>
             <tr><th scope="row">9 · Payroll &amp; workforce</th><td>Worker → approved compensation/time → calculation → review/approval → payment provider → subledger → ledger → reconciliation. Payroll calculation is distinct from payment authorization; payroll expense subledger should reconcile to its GL control account.</td></tr>
             <tr><th scope="row">10 · Treasury (future)</th><td>Cash positioning, liquidity, debt, FX, investment tracking, covenant monitoring, and provider integrations are future scope. Metrics may include cash conversion cycle, liquidity, free cash flow, burn/runway, and debt-service coverage. The platform may prepare/reconcile workflows; authorized banks/providers move funds.</td></tr>
@@ -223,6 +241,10 @@
         <article class="card">
           <h3>Cryptography and digital assets</h3>
           <p>Cryptography may support authentication and integrity without implying cryptocurrency use. Digital-asset protocol, accounting, tax, and legal treatment are separate questions.</p>
+        </article>
+        <article class="card">
+          <h3>Authentication design note</h3>
+          <p>Any future implementation should use a purpose-built password-hashing function (for example, Argon2id or bcrypt), not raw passwords or plain SHA-256. Authorization should validate identity, role, permission, entity scope, and endpoint; this proposal is not evidence those controls exist.</p>
         </article>
       </div>
     </section>
