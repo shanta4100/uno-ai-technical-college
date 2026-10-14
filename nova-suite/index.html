@@ -38,8 +38,10 @@
         <ul class="profile-list" id="profile-list"></ul>
         <div class="sidebar-actions">
           <button class="button button-secondary" id="export-profile" type="button" disabled>Export selected</button>
+          <button class="button button-secondary" id="export-all" type="button" disabled>Export all profiles</button>
           <label class="button button-secondary file-button" for="import-file">Import JSON</label>
           <input id="import-file" type="file" accept="application/json,.json" hidden>
+          <button class="button button-secondary" id="print-summary" type="button">Print architecture summary</button>
         </div>
         <p class="subtle" id="storage-state" role="status" aria-live="polite"></p>
       </aside>
@@ -110,6 +112,29 @@
           </fieldset>
 
           <fieldset>
+            <legend>Compliance planning checklist</legend>
+            <p class="field-hint">Selections are self-reported planning notes, not evidence of compliance or certification.</p>
+            <div class="check-grid">
+              <label class="check"><input type="checkbox" name="complianceChecklist" value="Privacy notice planning"> Privacy notice planning</label>
+              <label class="check"><input type="checkbox" name="complianceChecklist" value="Security policy planning"> Security policy planning</label>
+              <label class="check"><input type="checkbox" name="complianceChecklist" value="Vendor due diligence planning"> Vendor due diligence planning</label>
+              <label class="check"><input type="checkbox" name="complianceChecklist" value="Consumer rights and refund planning"> Consumer rights and refund planning</label>
+              <label class="check"><input type="checkbox" name="complianceChecklist" value="Procurement documentation planning"> Procurement documentation planning</label>
+              <label class="check"><input type="checkbox" name="complianceChecklist" value="Accessibility review planning"> Accessibility review planning</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Customer support draft · local only</legend>
+            <p class="field-hint">Drafts are not sent. Do not enter customer personal or confidential information. Production communication would require provider integration, consent and opt-out handling, audit records, and human escalation.</p>
+            <div class="field-grid">
+              <label>Planning channel <select name="supportChannel"><option value="">Select a channel</option><option>Website chat</option><option>Email draft</option><option>SMS draft</option><option>Callback ticket</option></select></label>
+              <label>Consent review status <select name="supportConsentStatus"><option value="">Not reviewed</option><option>Requirements identified</option><option>Needs qualified review</option></select></label>
+              <label class="span-two">Draft message <textarea name="supportDraft" rows="4" maxlength="2000" placeholder="Write a non-sensitive sample draft"></textarea></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
             <legend>Security configuration planning</legend>
             <p class="field-hint">These are proposed settings for documentation only. No security control is enabled by this form.</p>
             <div class="field-grid">
@@ -161,6 +186,7 @@
         </section>
       </div>
     </section>
+    <section id="print-summary" class="print-summary" aria-label="Printable architecture summary" hidden></section>
   </main>
 
   <footer class="footer">
