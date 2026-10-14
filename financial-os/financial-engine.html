@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browser-only financial, infrastructure, AI-cost, and development-time planning calculator.">
+  <title>Financial Planning Calculator · NOVA Digital Ecosystem</title>
+  <link rel="stylesheet" href="financial-engine.css">
+  <script src="financial-engine.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to calculator</a>
+  <header class="header">
+    <a href="./" class="brand">NOVA Digital Ecosystem <span>Planning Tools</span></a>
+    <nav aria-label="Page links">
+      <a href="investor-pitch.html">Investor brief</a>
+      <a href="../nova-digital-ecosystem/">Executive summary</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="intro">
+      <p class="eyebrow">Financial planning · scenario calculator</p>
+      <h1>Model revenue, costs, capacity, and return.</h1>
+      <p>Change the assumptions to explore a simple operating scenario. All calculations run in this page; nothing is saved or transmitted.</p>
+      <div class="notice"><strong>Planning tool only.</strong> Outputs are estimates from user-entered assumptions—not accounting, tax, investment, valuation, or legal advice; not audited forecasts or actual performance. Customer count is held constant for the selected period. No churn, customer acquisition, taxes, discounting, currency conversion, or seasonality is modeled. Do not enter confidential financial data.</div>
+    </section>
+
+    <form id="financial-form">
+      <section class="calculator-section" aria-labelledby="revenue-heading">
+        <p class="eyebrow">01 · Business scenario</p>
+        <h2 id="revenue-heading">Revenue and operating expenses</h2>
+        <div class="input-grid">
+          <label>Active customers <input id="customers" type="number" min="0" step="1" value="100000" inputmode="numeric"></label>
+          <label>Monthly price per customer (USD) <input id="monthly-price" type="number" min="0" step="0.01" value="20" inputmode="decimal"></label>
+          <label>Forecast period (months) <input id="period-months" type="number" min="1" step="1" value="18" inputmode="numeric"></label>
+          <label>Infrastructure budget for period (USD) <input id="infrastructure-budget" type="number" min="0" step="0.01" value="5000000" inputmode="decimal"></label>
+          <label>Development budget for period (USD) <input id="development-budget" type="number" min="0" step="0.01" value="3000000" inputmode="decimal"></label>
+          <label>Operations budget for period (USD) <input id="operations-budget" type="number" min="0" step="0.01" value="2000000" inputmode="decimal"></label>
+          <label>Investment basis for ROI (USD) <input id="investment" type="number" min="0" step="0.01" value="500000" inputmode="decimal"></label>
+        </div>
+      </section>
+
+      <section class="calculator-section" aria-labelledby="capacity-heading">
+        <p class="eyebrow">02 · Delivery capacity</p>
+        <h2 id="capacity-heading">Development effort and team capacity</h2>
+        <div class="input-grid">
+          <label>Task count <input id="tasks" type="number" min="0" step="1" value="1000" inputmode="numeric"></label>
+          <label>Average hours per task <input id="hours-per-task" type="number" min="0" step="0.1" value="4" inputmode="decimal"></label>
+          <label>Developer count <input id="developers" type="number" min="0" step="1" value="20" inputmode="numeric"></label>
+          <label>Hours per developer per month <input id="hours-per-month" type="number" min="0" step="0.1" value="160" inputmode="decimal"></label>
+        </div>
+      </section>
+
+      <section class="calculator-section" aria-labelledby="infrastructure-heading">
+        <p class="eyebrow">03 · Cost detail</p>
+        <h2 id="infrastructure-heading">Infrastructure and AI cost assumptions</h2>
+        <div class="input-grid">
+          <label>Servers <input id="servers" type="number" min="0" step="1" value="50" inputmode="numeric"></label>
+          <label>Monthly cost per server (USD) <input id="server-cost" type="number" min="0" step="0.01" value="200" inputmode="decimal"></label>
+          <label>Database storage (TB) <input id="database-tb" type="number" min="0" step="0.1" value="100" inputmode="decimal"></label>
+          <label>Monthly cost per TB (USD) <input id="database-cost" type="number" min="0" step="0.01" value="100" inputmode="decimal"></label>
+          <label>Network bandwidth (TB per month) <input id="network-tb" type="number" min="0" step="0.1" value="500" inputmode="decimal"></label>
+          <label>Network cost per TB (USD) <input id="network-cost" type="number" min="0" step="0.01" value="25" inputmode="decimal"></label>
+          <label>AI training (GPU hours) <input id="gpu-hours" type="number" min="0" step="1" value="100000" inputmode="numeric"></label>
+          <label>Cost per GPU hour (USD) <input id="gpu-cost" type="number" min="0" step="0.01" value="4" inputmode="decimal"></label>
+          <label>AI inference requests <input id="ai-requests" type="number" min="0" step="1" value="100000000" inputmode="numeric"></label>
+          <label>Cost per request (USD) <input id="request-cost" type="number" min="0" step="0.000001" value="0.001" inputmode="decimal"></label>
+        </div>
+        <p class="hint">Detailed infrastructure and AI totals are estimates separate from the infrastructure budget above. Avoid double-counting them when preparing a combined expense model.</p>
+      </section>
+    </form>
+
+    <section class="results" aria-labelledby="results-heading" aria-live="polite">
+      <div class="results-header">
+        <div><p class="eyebrow">Scenario output</p><h2 id="results-heading">Planning estimates · USD</h2></div>
+        <button id="print-report" type="button">Print scenario</button>
+      </div>
+      <div class="result-grid">
+        <article class="result-card"><h3>Gross revenue</h3><strong id="gross-revenue">$0</strong><p>Customers × monthly price × period</p></article>
+        <article class="result-card"><h3>Monthly recurring revenue</h3><strong id="mrr">$0</strong><p>Customers × monthly price</p></article>
+        <article class="result-card"><h3>Annual recurring revenue</h3><strong id="arr">$0</strong><p>MRR × 12</p></article>
+        <article class="result-card"><h3>Estimated net profit</h3><strong id="net-profit">$0</strong><p>Revenue − entered period expenses</p></article>
+        <article class="result-card"><h3>ROI</h3><strong id="roi">—</strong><p>Profit ÷ investment basis × 100</p></article>
+        <article class="result-card"><h3>Development effort</h3><strong id="required-hours">0 hours</strong><p>Tasks × average hours per task</p></article>
+        <article class="result-card"><h3>Team capacity</h3><strong id="team-capacity">0 hours/month</strong><p>Developers × hours per month</p></article>
+        <article class="result-card"><h3>Completion estimate</h3><strong id="completion-months">—</strong><p>Required hours ÷ monthly team capacity</p></article>
+      </div>
+      <div class="cost-results">
+        <h3>Detailed infrastructure and AI estimates for selected period</h3>
+        <dl>
+          <dt>Compute</dt><dd id="compute-cost">$0</dd>
+          <dt>Database storage</dt><dd id="database-total">$0</dd>
+          <dt>Network transfer</dt><dd id="network-total">$0</dd>
+          <dt>AI training</dt><dd id="training-cost">$0</dd>
+          <dt>AI inference</dt><dd id="inference-cost">$0</dd>
+          <dt>Detailed subtotal (not included again in net profit)</dt><dd id="detailed-cost">$0</dd>
+        </dl>
+      </div>
+      <p id="calculation-status" role="status" aria-live="polite"></p>
+      <p class="hint">Enterprise valuation, taxation, accounting, growth, churn, funding, and compliance reports require additional verified inputs and qualified review; this calculator does not estimate them.</p>
+    </section>
+  </main>
+  <footer class="footer">
+    <span>Scenario tool · Browser-only · No financial transactions</span>
+    <a href="./">Return to Financial OS overview</a>
+  </footer>
+</body>
+</html>

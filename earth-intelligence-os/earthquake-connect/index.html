@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SSGPT6 Earthquake Connect source-labeled observations, research notes, preparedness references, and laboratory documentation.">
+  <meta name="theme-color" content="#07111f">
+  <title>SSGPT6 Earthquake Connect · Reference Hub</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="SSGPT6 Earthquake Connect home">
+      <span>SSGPT6</span><small>EARTHQUAKE CONNECT</small>
+    </a>
+    <span class="classification">STATIC REFERENCE HUB · NONOPERATIONAL</span>
+  </header>
+
+  <main id="main">
+    <section class="intro">
+      <p class="eyebrow">GNAIAAAC LLC · SSGPT6</p>
+      <h1>Earthquake Connect</h1>
+      <p class="lead">Source-labeled research notes, preparedness references, and laboratory documentation.</p>
+      <div class="boundary" role="note">
+        <strong>Safety boundary</strong>
+        <p>This site is not an earthquake prediction system, official warning service, emergency dispatch service, or physical-control platform. Observations are not forecasts. Research and simulations are not official warnings.</p>
+        <p>During an emergency, follow instructions from the relevant national authorities and official warning agencies.</p>
+      </div>
+    </section>
+
+    <section class="dashboard" aria-label="Four separate information windows">
+      <article class="panel observations" id="observations">
+        <div class="panel-heading">
+          <div><p class="window-label">WINDOW 1 · PROVIDER OBSERVATIONS</p><h2>USGS earthquake catalog</h2></div>
+          <span class="status" id="feed-status" data-state="idle">Not loaded</span>
+        </div>
+        <p class="panel-copy">USGS-published records for the past day. Provider data may be revised and do not establish safety or predict future events.</p>
+        <div class="feed-tools">
+          <label for="event-search">Filter displayed locations</label>
+          <input id="event-search" type="search" placeholder="Search event locations" autocomplete="off">
+          <button id="refresh-feed" type="button">Load USGS observations</button>
+        </div>
+        <p id="feed-message" class="feed-message" role="status" aria-live="polite">No feed request has been made.</p>
+        <div class="table-wrap">
+          <table>
+            <caption>USGS-published earthquake records, event time shown in UTC</caption>
+            <thead><tr><th scope="col">Magnitude</th><th scope="col">Provider-reported location</th><th scope="col">Event time (UTC)</th></tr></thead>
+            <tbody id="event-rows"><tr><td colspan="3">No observations loaded.</td></tr></tbody>
+          </table>
+        </div>
+        <p class="source-note">Source: <a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson" rel="noreferrer">USGS all-day GeoJSON feed</a>. Attribution and source event detail links are retained where supplied.</p>
+        <p class="retrieved">Last successful retrieval: <time id="retrieved-at">Not retrieved</time></p>
+      </article>
+
+      <article class="panel research" id="research">
+        <div class="panel-heading">
+          <div><p class="window-label">WINDOW 2 · FIRST-PARTY RESEARCH</p><h2>GNAIAAAC research</h2></div>
+          <span class="status" data-state="unavailable">Not configured</span>
+        </div>
+        <div class="empty-state">
+          <h3>No verified first-party observation source</h3>
+          <p>No GNAIAAAC dataset endpoint, schema, source provenance, or validation record was supplied for this package. No first-party events or comparisons are generated.</p>
+        </div>
+        <p class="panel-copy">To enable a comparison, provide an authorized data source and define event matching, units, timestamps, uncertainty, revision handling, and independent validation. USGS records will not be altered or relabeled as first-party data.</p>
+        <p class="evidence-label">Status: UNAVAILABLE · No model score or accuracy claim</p>
+      </article>
+
+      <article class="panel outlook" id="outlook">
+        <div class="panel-heading">
+          <div><p class="window-label">WINDOW 3 · RESEARCH OUTLOOK</p><h2>Long-horizon research</h2></div>
+          <span class="status" data-state="research">Research only</span>
+        </div>
+        <div class="horizon-row">
+          <label for="horizon">Requested horizon</label>
+          <select id="horizon" disabled aria-describedby="horizon-note">
+            <option>1 day</option><option>7 days</option><option>15 days</option>
+            <option>30 days</option><option>90 days</option><option>100 years</option>
+          </select>
+        </div>
+        <div class="empty-state">
+          <h3>No validated outlook is available</h3>
+          <p>No evaluated model, quantified uncertainty, independent validation, or authorized forecast source is connected. No earthquake, tsunami, volcano, or wildlife prediction is displayed.</p>
+        </div>
+        <p id="horizon-note" class="panel-copy">Long-range horizons are not supported by the USGS observation feed. A scenario or research estimate must not be presented as a prediction or safety guidance.</p>
+        <p class="evidence-label">Status: CONCEPT · Forecasting capability not established</p>
+      </article>
+
+      <article class="panel environment" id="environment">
+        <div class="panel-heading">
+          <div><p class="window-label">WINDOW 4 · WEATHER / SIMULATION</p><h2>Environmental study area</h2></div>
+          <span class="status" data-state="unavailable">No live source</span>
+        </div>
+        <div class="empty-state">
+          <h3>Weather and simulation data are not connected</h3>
+          <p>No GNAIAAAC weather source, sensor, satellite map, GPS service, or simulation dataset is included. No live weather values, hazard status, or “all clear” state is fabricated.</p>
+        </div>
+        <p class="panel-copy">A future simulation must be visibly labeled SIMULATION, use synthetic inputs, and remain separate from provider observations, research records, exports, and safety decisions.</p>
+        <p class="evidence-label">Status: UNAVAILABLE · No location collection or map tiles</p>
+      </article>
+    </section>
+
+    <section class="references">
+      <div>
+        <p class="eyebrow">Official-source pointers</p>
+        <h2>Consult the issuing authority</h2>
+        <p>A source link is a pointer, not independent verification. Check each agency’s current publication, product scope, revisions, access conditions, and reuse terms.</p>
+      </div>
+      <ul>
+        <li><a href="https://earthquake.usgs.gov/data/comcat/" rel="noreferrer">USGS Earthquake Catalog (ComCat)</a><span>Catalog observations; not an earthquake prediction service.</span></li>
+        <li><a href="https://bmd.gov.bd/web/en/earthquake/" rel="noreferrer">Bangladesh Meteorological Department · earthquake information</a><span>Consult BMD for Bangladesh notices and official information.</span></li>
+        <li><a href="https://www.tsunami.gov/" rel="noreferrer">U.S. Tsunami Warning Centers</a><span>Official U.S. tsunami warning information; follow relevant national authorities locally.</span></li>
+      </ul>
+    </section>
+
+    <section class="laboratory">
+      <p class="eyebrow">Laboratory scope · concept only</p>
+      <h2>Keep research lanes separate</h2>
+      <div class="lab-grid">
+        <div><h3>Stamp 1 ingestion</h3><p>Proposed flow: published GeoJSON → feed adapter → event store, preserving source, retrieval time, identifier, magnitude scale, and revision state. This package does not implement a SQLite store or ingestion backend.</p></div>
+        <div><h3>QWIS simulation</h3><p>Simulation outputs are not observations, forecasts, safety limits, or acceptance criteria. `actuators_driven = false` is a design boundary, not proof of an active system.</p></div>
+        <div><h3>Forecasting research</h3><p>PINNs, Fourier Feature PINNs, FNO, DeepONet, and PINO are research topics only; no deployed or validated forecasting capability is claimed.</p></div>
+        <div><h3>Engineering studies</h3><p>Site-specific geotechnical and structural conclusions require current standards, site investigation, and qualified professional review.</p></div>
+      </div>
+    </section>
+
+    <section class="safety">
+      <p class="eyebrow">Non-negotiable boundaries</p>
+      <h2>What this project does not do</h2>
+      <ul>
+        <li>No exact or month-ahead earthquake, tsunami, eruption, or storm-surge prediction.</li>
+        <li>No actuator, plant-control, breaker, valve, coil, VFD, or safety-interlock access.</li>
+        <li>No claim of BMD, USGS, PTWC, UN, NASA, or government endorsement.</li>
+        <li>No simulation or model output presented as an official warning.</li>
+        <li>No site-specific engineering conclusion without qualified review.</li>
+        <li>No payment or passkey login represented as emergency authority.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>GNAIAAAC LLC · SSGPT6 Earthquake Connect</span>
+    <span>Static reference package · No warning authority · No hardware control · Deployment not verified</span>
+  </footer>
+</body>
+</html>

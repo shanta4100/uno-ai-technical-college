@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GNAI TV cinematic staging concept for science, culture, learning, and sustainability.">
+  <title>GNAI TV · Unified Cinematic Staging Concept</title>
+  <link rel="stylesheet" href="homepage.css">
+  <script src="staging.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#home">Skip to content</a>
+  <header class="topbar">
+    <a class="wordmark" href="#home"><span class="mark" aria-hidden="true">G</span><span>GNAI TV<small>GLOBAL KNOWLEDGE · CONCEPT</small></span></a>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a><a href="#catalog">Catalog</a><a href="#live">Live</a>
+      <a href="#studio">AI Studio</a><a href="#dashboard">Dashboard</a><a href="#climate">Climate</a>
+    </nav>
+    <span class="status">STAGING · NOT DEPLOYED</span>
+  </header>
+
+  <main>
+    <section class="hero section-anchor" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">Science · Creativity · Culture · Sustainability</p>
+        <h1>A wider view<br>of our shared world.</h1>
+        <p>Connecting science, creativity, culture, and AI to inspire a sustainable future.</p>
+        <a class="button" href="#catalog">Explore planned programs <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="screen-wrap">
+        <div class="screen-label"><span>GLOBAL JOURNEY · CONCEPT ART</span><span>NO LIVE STREAM</span></div>
+        <div class="cosmic-screen" role="img" aria-label="Illustrative journey from Mars through the Moon toward Earth and ocean">
+          <div class="stars" aria-hidden="true"></div><div class="orbit orbit-one" aria-hidden="true"></div>
+          <div class="planet mars" aria-hidden="true"><span>MARS</span></div>
+          <div class="planet moon" aria-hidden="true"><span>MOON</span></div>
+          <div class="planet earth" aria-hidden="true"><span>EARTH</span></div>
+          <div class="planet ocean" aria-hidden="true"><span>OCEAN</span></div>
+          <div class="journey-line" aria-hidden="true"></div>
+          <p class="scene-caption">Mars <span>→</span> Moon <span>→</span> Earth <span>→</span> Ocean</p>
+        </div>
+        <div class="screen-footer"><span>Static visual · no broadcast connected</span><span>Powered by GNAIAAAC LLC*</span></div>
+      </div>
+      <p class="brand-caveat">*Brand/ownership statement supplied for planning; not independently verified. This is a static staging concept, not a hosted service.</p>
+      <div class="chapter-strip" aria-label="Seven chapter journey">
+        <span>01 · Mars</span><span>02 · Moon</span><span>03 · Earth</span><span>04 · Ocean</span>
+        <span>05 · Living World</span><span>06 · Climate Ideas</span><span>07 · Shared Future</span>
+      </div>
+    </section>
+
+    <section class="content-section section-anchor" id="catalog" aria-labelledby="catalog-title">
+      <div class="section-heading">
+        <p class="eyebrow">Program catalog · planned titles</p>
+        <h2 id="catalog-title">Stories for a curious planet.</h2>
+        <p>These are sample program concepts, not published episodes or licensed video. Search and My List work only in this browser.</p>
+      </div>
+      <div class="catalog-tools">
+        <label>Search programs <input id="catalog-search" type="search" placeholder="Try science, ocean, culture…" autocomplete="off"></label>
+        <label>Category
+          <select id="catalog-category"><option value="all">All categories</option><option>Science</option><option>Culture</option><option>Education</option><option>Earth</option><option>Future</option></select>
+        </label>
+        <span id="catalog-count" role="status" aria-live="polite"></span>
+      </div>
+      <div class="program-grid" id="program-grid"></div>
+      <p id="catalog-status" class="inline-status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="content-section live-section section-anchor" id="live" aria-labelledby="live-title">
+      <div class="section-heading">
+        <p class="eyebrow">Broadcast status</p>
+        <h2 id="live-title">Live, when it is truly live.</h2>
+        <p>No channel, stream, or program video is hosted or connected in this prototype.</p>
+      </div>
+      <div class="live-layout">
+        <div class="video-stage">
+          <video id="local-video" controls playsinline preload="metadata" aria-label="Locally selected video preview"></video>
+          <div id="video-empty" class="video-empty"><span aria-hidden="true">▶</span><strong>Broadcast unavailable</strong><small>No live stream is configured. You may preview a video file on this device; it is not uploaded.</small></div>
+        </div>
+        <div class="live-info">
+          <span class="status status-muted">OFFLINE · NO BROADCAST</span>
+          <h3>Local video preview</h3>
+          <p>Select a video stored on your device for a temporary local preview. The file is not transmitted or saved by this page.</p>
+          <label class="button button-secondary file-label" for="video-file">Choose local video</label>
+          <input id="video-file" type="file" accept="video/*" hidden>
+          <button id="clear-video" class="text-button" type="button" disabled>Clear preview</button>
+          <p id="video-status" class="inline-status" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section studio-section section-anchor" id="studio" aria-labelledby="studio-title">
+      <div class="section-heading">
+        <p class="eyebrow">AI Studio · local writing workspace</p>
+        <h2 id="studio-title">Shape an idea into a story.</h2>
+        <p>This prototype provides writing prompts only. It has no AI model or backend; text stays in this browser if you choose Save.</p>
+      </div>
+      <div class="studio-layout">
+        <div class="studio-editor">
+          <label for="studio-template">Writing template</label>
+          <select id="studio-template">
+            <option value="story">Science story outline</option>
+            <option value="climate">Climate learning segment</option>
+            <option value="culture">Cultural exchange interview</option>
+            <option value="research">Research explainer</option>
+          </select>
+          <label for="studio-prompt">Your draft or prompt</label>
+          <textarea id="studio-prompt" rows="8" maxlength="5000" placeholder="Choose a template or write a non-sensitive idea…"></textarea>
+          <div class="studio-actions">
+            <button id="apply-template" class="button button-primary" type="button">Use template</button>
+            <button id="save-draft" class="button button-secondary" type="button">Save on device</button>
+            <button id="copy-draft" class="button button-secondary" type="button">Copy</button>
+            <button id="undo-draft" class="button button-secondary" type="button" disabled>Undo</button>
+            <button id="clear-draft" class="button button-quiet" type="button">Clear</button>
+          </div>
+          <p id="studio-status" class="inline-status" role="status" aria-live="polite"></p>
+        </div>
+        <aside class="keyboard-panel">
+          <h3>On-screen writing keys</h3>
+          <p>Tap a key to insert it at the cursor. This is a convenience control, not an input-security feature.</p>
+          <div class="virtual-keyboard" id="virtual-keyboard" aria-label="On-screen text input keys"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="content-section dashboard-section section-anchor" id="dashboard" aria-labelledby="dashboard-title">
+      <div class="section-heading">
+        <p class="eyebrow">Device-local preferences</p>
+        <h2 id="dashboard-title">Make this space yours.</h2>
+        <p>Optional preferences are stored in this browser only. Local storage is not encrypted, authenticated, or synced. Do not enter sensitive details.</p>
+      </div>
+      <div class="dashboard-layout">
+        <form id="preferences-form" class="preferences-form">
+          <label for="visitor-name">Display name (optional)</label>
+          <input id="visitor-name" maxlength="60" autocomplete="nickname" placeholder="A name for this device">
+          <label for="favorite-topic">Favorite topic</label>
+          <select id="favorite-topic"><option>Science</option><option>Culture</option><option>Earth</option><option>Education</option><option>Future</option></select>
+          <button class="button button-primary" type="submit">Save preference here</button>
+          <p id="preferences-status" class="inline-status" role="status" aria-live="polite"></p>
+        </form>
+        <div class="welcome-card">
+          <p class="eyebrow">Your local welcome</p>
+          <h3 id="personal-welcome">Welcome, curious explorer.</h3>
+          <p id="topic-welcome">Explore a world of Science stories.</p>
+          <div class="my-list-heading"><h3>My List</h3><span id="my-list-count">0 saved</span></div>
+          <ul id="my-list" class="my-list"></ul>
+          <button id="clear-my-list" class="text-button" type="button">Clear My List</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section climate-section section-anchor" id="climate" aria-labelledby="climate-title">
+      <div class="section-heading">
+        <p class="eyebrow">Climate innovation · learning roadmap</p>
+        <h2 id="climate-title">From understanding to shared action.</h2>
+        <p>An educational roadmap concept—not a claim of active climate projects, measured emissions reduction, or environmental monitoring.</p>
+      </div>
+      <ol class="climate-roadmap">
+        <li><span>01</span><h3>Learn</h3><p>Explore climate science and reliable evidence.</p></li>
+        <li><span>02</span><h3>Imagine</h3><p>Discover community ideas and possible solutions.</p></li>
+        <li><span>03</span><h3>Collaborate</h3><p>Connect educators, researchers, and communities.</p></li>
+        <li><span>04</span><h3>Evaluate</h3><p>Measure outcomes transparently and improve.</p></li>
+      </ol>
+    </section>
+
+    <section class="closing">
+      <p class="eyebrow">Shanta Econ Harmony · proposed mission</p>
+      <h2>Every culture contributes to humanity’s shared success.</h2>
+      <p>Peace · Knowledge · Culture · Science · Sustainability · Shared prosperity</p>
+      <small>Aspirational vision; no global network, council, satellite service, partnership, or measured social impact is established by this concept.</small>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="wordmark" href="#home"><span class="mark" aria-hidden="true">G</span>GNAI TV</a>
+    <span>Unified cinematic staging concept · Not deployed · No backend or hosted programs</span>
+    <a href="../nova-digital-ecosystem/">NOVA Digital Ecosystem context</a>
+  </footer>
+</body>
+</html>

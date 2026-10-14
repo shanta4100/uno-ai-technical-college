@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Offline Earth Intelligence command-center mockup with schematic map and opt-in browser geolocation. No live hazard data or forecasts.">
+  <title>Guardian Earth Intelligence OS · Offline Command Center</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <script src="dashboard.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to dashboard</a>
+  <header class="topbar">
+    <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">G</span><span>GNAIAAAC <small>EARTH INTELLIGENCE OS</small></span></a>
+    <div class="header-tools">
+      <label class="search-label">Global search <input id="global-search" type="search" placeholder="Search locations" aria-label="Search demo locations"></label>
+      <label class="language-label">Language <select aria-label="Display language"><option>English</option></select></label>
+      <button class="icon-button" type="button" aria-label="Accessibility options" title="Accessibility options">A</button>
+      <span class="offline-pill">OFFLINE DEMO</span>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="command-heading">
+      <div>
+        <p class="eyebrow">Guardian Earth Intelligence OS · command-center concept</p>
+        <h1>Observe <span>·</span> Validate <span>·</span> Forecast <span>·</span> Protect</h1>
+      </div>
+      <div class="clock-card"><span>UTC · MOCKUP CLOCK</span><strong id="utc-clock">—</strong></div>
+    </section>
+    <section class="critical-notice" role="alert">
+      <strong>Offline interface prototype—not a live monitoring or emergency-warning service.</strong>
+      No provider feeds, forecast models, GIS engine, satellite imagery, official alerts, or active security controls are connected. Use official sources and emergency-management authorities for safety decisions.
+    </section>
+
+    <section class="dashboard-grid" aria-label="Earth intelligence command center">
+      <article class="panel panel-observed" id="observations">
+        <div class="panel-head"><span class="window-number">WINDOW 01</span><span class="state state-off">No live feed</span></div>
+        <h2>External Observation Engine</h2>
+        <p>Provider source names are integration targets only. No provider data is loaded or displayed.</p>
+        <div class="source-list" aria-label="Potential observation sources">
+          <span>USGS</span><span>EMSC</span><span>JMA</span><span>BMKG</span><span>GeoNet</span><span>PHIVOLCS</span>
+        </div>
+        <div class="empty-state">
+          <strong>No observed events available</strong>
+          <span>Connect and verify an authorized data source before showing provider-published observations.</span>
+        </div>
+        <p class="panel-note">Future observation records should preserve provider content, source URL, units, event time, retrieval time, and correction history without AI alteration.</p>
+      </article>
+
+      <article class="panel panel-validation" id="validation">
+        <div class="panel-head"><span class="window-number">WINDOW 02</span><span class="state state-plan">Planned</span></div>
+        <h2>Validation &amp; Comparison Engine</h2>
+        <div class="metric-grid">
+          <div><span>Magnitude comparison</span><strong>—</strong></div>
+          <div><span>Location / depth</span><strong>—</strong></div>
+          <div><span>Agreement / confidence</span><strong>—</strong></div>
+          <div><span>Historical accuracy / drift</span><strong>—</strong></div>
+        </div>
+        <div class="chart-list">
+          <span>Difference chart · no records</span>
+          <span>Error chart · no records</span>
+          <span>Agreement timeline · no records</span>
+          <span>Confidence trend · no records</span>
+        </div>
+        <p class="panel-note">Validation requires documented ground truth, event matching, evaluation period, sample size, metric definitions, and independent review. No model performance is asserted.</p>
+      </article>
+
+      <article class="panel panel-environment">
+        <div class="panel-head"><span class="window-number">WINDOW 03</span><span class="state state-off">No sensors connected</span></div>
+        <h2>Environmental Intelligence</h2>
+        <div class="metric-grid metric-grid-three">
+          <div><span>Pressure</span><strong>—</strong></div><div><span>Humidity</span><strong>—</strong></div>
+          <div><span>Dew point</span><strong>—</strong></div><div><span>Temperature</span><strong>—</strong></div>
+          <div><span>Wind</span><strong>—</strong></div><div><span>Ocean state</span><strong>—</strong></div>
+          <div><span>Solar flux</span><strong>—</strong></div><div><span>Geomagnetic index</span><strong>—</strong></div>
+          <div><span>Lightning density</span><strong>—</strong></div>
+        </div>
+        <h3>Potential correlation studies</h3>
+        <p class="chips"><span>Weather ↔ seismic</span><span>Weather ↔ GPS</span><span>GPS ↔ magnetic</span><span>Magnetic ↔ ocean</span></p>
+        <p class="panel-note">Correlation is not causation. Any analysis requires source provenance, methods, uncertainty reporting, and expert review.</p>
+      </article>
+
+      <article class="panel panel-map" id="map">
+        <div class="panel-head"><span class="window-number">WINDOW 04 · GLOBAL OPERATIONS MAP</span><span class="state state-off">Schematic · no GIS</span></div>
+        <div class="map-toolbar" role="group" aria-label="Map display modes">
+          <button type="button" class="map-mode active" aria-pressed="true" data-mode="globe">🌎 Schematic</button>
+          <button type="button" class="map-mode" aria-pressed="false" data-mode="satellite" disabled title="Satellite imagery is not connected">🛰 Satellite unavailable</button>
+          <button type="button" id="locate-me" class="map-mode">📍 Use my location</button>
+        </div>
+        <div class="map-controls">
+          <label>Country / region
+            <select id="country-select">
+              <option value="global">🌐 Global view</option>
+              <option value="usa">🇺🇸 United States (demo)</option>
+              <option value="japan">🇯🇵 Japan (demo)</option>
+              <option value="bangladesh">🇧🇩 Bangladesh (demo)</option>
+              <option value="indonesia">🇮🇩 Indonesia (demo)</option>
+              <option value="chile">🇨🇱 Chile (demo)</option>
+              <option value="turkey">🇹🇷 Türkiye (demo)</option>
+              <option value="italy">🇮🇹 Italy (demo)</option>
+              <option value="new-zealand">🇳🇿 New Zealand (demo)</option>
+            </select>
+          </label>
+          <label>Timeline
+            <select id="timeline-select">
+              <option>24 hours</option><option>7 days</option><option>15 days</option>
+              <option>30 days</option><option>90 days</option><option>1 year</option>
+              <option>5 years</option><option>10 years</option><option>25 years</option>
+              <option>50 years</option><option>100 years</option>
+            </select>
+          </label>
+          <label>Hazard view
+            <select id="hazard-select">
+              <option>Earthquake</option><option>Tsunami</option><option>Volcano</option>
+              <option>Wildlife</option><option>Weather</option><option>Combined risks</option>
+            </select>
+          </label>
+        </div>
+        <div class="map-workspace">
+          <div class="map-frame">
+            <div class="map-banner">SCHEMATIC INTERACTIVE MAP · NOT TO SCALE · NO LIVE LAYERS</div>
+            <svg id="schematic-map" viewBox="0 0 1000 500" role="img" aria-label="Schematic world map. Click to choose an illustrative location; no geographic basemap or event data is shown." tabindex="0">
+              <defs>
+                <pattern id="map-grid" width="100" height="62.5" patternUnits="userSpaceOnUse">
+                  <path d="M 100 0 L 0 0 0 62.5" fill="none" stroke="#315264" stroke-width="1" stroke-dasharray="3 5"/>
+                </pattern>
+              </defs>
+              <rect class="ocean" width="1000" height="500" rx="10"/>
+              <rect width="1000" height="500" fill="url(#map-grid)" rx="10"/>
+              <g class="land" aria-hidden="true">
+                <path d="M115 102l30-26 56 7 32 27-10 23 19 14-23 25-15 42-31 20-15 49-20-5-10-39-31-26-10-50 19-31-9-23z"/>
+                <path d="M262 275l31 12 20 36-8 47-18 43-18-10-6-39-19-37 2-34z"/>
+                <path d="M437 111l33-21 48 6 28-13 53 14 28-1 38 27-12 25-49 4-13 31-31 3-22-19-39 10-24-19-34 5-17-23-34-7z"/>
+                <path d="M470 199l40-17 52 13 22 37-8 42-24 55-33 35-24-24-7-40-23-33 8-34-17-17z"/>
+                <path d="M641 269l38-12 36 17 21 37-14 35-42-3-24-27-27-15z"/>
+                <path d="M753 127l42-21 54 17 33 32-16 26-47-4-20 26-31-16-27 9-15-30z"/>
+                <path d="M844 314l30-14 28 18-7 34-33 9-24-19z"/>
+              </g>
+              <g id="radius-rings" class="radius-rings" aria-hidden="true">
+                <circle id="monitor-ring" class="ring ring-monitor" r="96"/>
+                <circle id="risk-ring" class="ring ring-risk" r="49"/>
+                <circle id="safe-ring" class="ring ring-safe" r="22"/>
+                <circle id="map-point" class="map-point" r="6"/>
+              </g>
+              <text x="24" y="472" class="map-caption">Illustrative selection only · rings are not geodesic distance buffers</text>
+            </svg>
+            <p id="map-status" class="map-status" aria-live="polite">Select a region preset or click the schematic map. Location is not reverse-geocoded.</p>
+          </div>
+          <aside class="location-panel" aria-label="Selected location details">
+            <p class="window-number">SELECTED LOCATION · DEMO</p>
+            <h3 id="location-name">Global view</h3>
+            <dl class="location-data">
+              <dt>Country / region</dt><dd id="location-country">Not resolved</dd>
+              <dt>Latitude</dt><dd id="location-latitude">—</dd>
+              <dt>Longitude</dt><dd id="location-longitude">—</dd>
+              <dt>Altitude</dt><dd id="location-altitude">Unavailable</dd>
+              <dt>Local time</dt><dd id="local-clock">—</dd>
+              <dt>Radius rings</dt><dd>35 / 80 / 250 km*</dd>
+            </dl>
+            <div class="probability-list">
+              <p><span>Seismic probability</span><b>Unavailable</b></p>
+              <p><span>Tsunami probability</span><b>Unavailable</b></p>
+              <p><span>Volcano probability</span><b>Unavailable</b></p>
+              <p><span>Weather risk</span><b>Unavailable</b></p>
+              <p><span>Confidence</span><b>Not evaluated</b></p>
+            </div>
+            <p class="panel-note">*Ring radii are illustrative controls, not measured buffers. No probabilities or risk levels are calculated.</p>
+          </aside>
+        </div>
+        <details class="layer-controls">
+          <summary>Map layer controls · all layers disconnected</summary>
+          <div class="layer-list">
+            <label><input type="checkbox" disabled> Earthquakes</label><label><input type="checkbox" disabled> Tsunamis</label>
+            <label><input type="checkbox" disabled> Volcanoes</label><label><input type="checkbox" disabled> Wildlife</label>
+            <label><input type="checkbox" disabled> Weather</label><label><input type="checkbox" disabled> GPS stations</label>
+            <label><input type="checkbox" disabled> Satellite imagery</label><label><input type="checkbox" disabled> Risk zones</label>
+            <label><input type="checkbox" disabled> Confidence zones</label><label><input type="checkbox" disabled> Trust zones</label>
+          </div>
+        </details>
+      </article>
+
+      <article class="panel panel-decision">
+        <div class="panel-head"><span class="window-number">WINDOW 05 · CONCEPT</span><span class="state state-off">No live decision service</span></div>
+        <h2>AI Decision Center</h2>
+        <p class="global-status">GLOBAL STATUS · UNAVAILABLE</p>
+        <div class="empty-state">
+          <strong>No current outlook</strong>
+          <span>Region, anomaly score, earthquake/tsunami outlook, confidence, and trust are unavailable because no verified feeds or evaluated model are connected.</span>
+        </div>
+        <details class="sample-data">
+          <summary>View a synthetic interface example (not current conditions)</summary>
+          <p><strong>SIMULATION ONLY · NOT A WARNING OR FORECAST</strong></p>
+          <dl>
+            <dt>Demo region</dt><dd>Example only</dd>
+            <dt>Anomaly score</dt><dd>82 · synthetic placeholder</dd>
+            <dt>Earthquake outlook</dt><dd>Elevated · synthetic placeholder</dd>
+            <dt>Tsunami outlook</dt><dd>Low · synthetic placeholder</dd>
+            <dt>Weather influence</dt><dd>Moderate · synthetic placeholder</dd>
+            <dt>Confidence / trust</dt><dd>78% / 84 · synthetic placeholder</dd>
+          </dl>
+        </details>
+      </article>
+
+      <article class="panel panel-math">
+        <div class="panel-head"><span class="window-number">RESEARCH CONCEPT</span><span class="state state-plan">Not computed</span></div>
+        <h2>Guardian Index &amp; Earth Intelligence Kernel</h2>
+        <p class="formula">GI = 100 × (P × C × T × Q)<sup>1/4</sup></p>
+        <p>P = probability · C = confidence · T = validation trust · Q = data quality. Inputs, calibration, missing-data rules, and index meaning require formal research and validation.</p>
+        <p class="formula">EIK = αS + βG + γW + δM + εO + ζH</p>
+        <p>S = seismic · G = GPS · W = weather · M = geomagnetic · O = ocean · H = historical. Weights and outputs are not established; no calculation is performed here.</p>
+      </article>
+
+      <article class="panel panel-security">
+        <div class="panel-head"><span class="window-number">EARTH SHIELD · TARGET CONTROLS</span><span class="state state-plan">Not deployed</span></div>
+        <h2>Sovereign Protection Model</h2>
+        <div class="control-grid">
+          <div><h3>Financial</h3><p>Provider fraud tools, 3-D Secure, dual approval, ACH controls, reconciliation, ledger integrity.</p></div>
+          <div><h3>Network</h3><p>Zero Trust, mTLS, workload identity, secrets/PKI, segmentation, IDS/IPS, SIEM, audit logs.</p></div>
+          <div><h3>Data</h3><p>Tenant isolation, PostgreSQL row-level security, immutable records, hash verification, encrypted backups.</p></div>
+          <div><h3>AI</h3><p>Model registry, versioning, drift detection, validation reports, and human approval.</p></div>
+          <div><h3>Satellite / RF</h3><p>Provider-dependent routing, link monitoring, and signal integrity are future research/integration concepts.</p></div>
+        </div>
+        <p class="panel-note"><strong>None of these controls is active or verified by this mockup.</strong> No provider or satellite connection exists. Security claims require implementation evidence and independent assessment; no system is “100% secure.”</p>
+      </article>
+
+      <article class="panel panel-pillars">
+        <div class="panel-head"><span class="window-number">EARTH SHIELD · RESEARCH PILLARS</span><span class="state state-plan">Conceptual</span></div>
+        <h2>Five-Pillar Architecture</h2>
+        <div class="pillar-list">
+          <p><strong>Earth Engine</strong><span>Earthquakes · faults · GPS · deformation</span></p>
+          <p><strong>Ocean Engine</strong><span>Tsunami · tides · floods · storm surge</span></p>
+          <p><strong>Atmosphere Engine</strong><span>Weather · pressure · wind · humidity · lightning</span></p>
+          <p><strong>Infrastructure Engine</strong><span>Buildings · utilities · roads · bridges · power</span></p>
+          <p><strong>Intelligence Engine</strong><span>PINN · FF-PINN · FNO · PINO · DeepONet · statistical methods</span></p>
+        </div>
+      </article>
+
+      <article class="panel panel-media" id="broadcast">
+        <div class="panel-head"><span class="window-number">GNAI TV</span><span class="state state-plan">Broadcast architecture proposed</span></div>
+        <h2>Global Broadcast Network</h2>
+        <p>Potential sections: Earth Intelligence Live, Earth/Ocean Shield, research hub, validation reports, documentaries, interviews, training, community, and downloads.</p>
+        <div class="schedule">
+          <p><strong>Earth Intelligence Daily</strong><span>Proposed 15-minute briefing</span></p>
+          <p><strong>GNAIAAAC Tech Brief</strong><span>Proposed 30-minute program</span></p>
+          <p><strong>Global Resilience Report</strong><span>Proposed weekly program</span></p>
+        </div>
+        <p class="panel-note">No live broadcast, video hosting, CDN, RSS, podcast, or social-publishing integration is implemented. Domain ownership and availability have not been verified.</p>
+      </article>
+    </section>
+
+    <section class="mission">
+      <p class="eyebrow">Public mission</p>
+      <h2>Observe · Compare · Validate · Forecast · Protect · Recover · Educate · Broadcast</h2>
+      <p>Provide evidence-based probabilistic intelligence as a research and decision-support goal—not exact prediction, official warning, or guaranteed protection.</p>
+      <p class="citation-note">The cited Earthquake Connect specification and Earth Shield source documents were not provided in this repository; claims of alignment remain unverified.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Concept dashboard · No live data, forecasts, authentication, or active security controls</span>
+    <span>Branding and ownership statements supplied for planning; verification pending</span>
+  </footer>
+</body>
+</html>

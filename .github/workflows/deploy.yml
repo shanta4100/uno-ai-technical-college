@@ -1,38 +1,79 @@
-name: Deploy to GitHub Pages
+name: Static Website Validation
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
+  workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  validate:
+    name: Validate Static Website
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
+      - name: Verify required website and configuration files
+        shell: bash
+        run: |
+          set -euo pipefail
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: '.'
+          required_files=(
+            "index.html"
+            "style.css"
+            "_config.yml"
+            "public/index.html"
+            "ssgpt6-preview.html"
+            "earth-intelligence-os/earthquake-connect/index.html"
+            "earth-intelligence-os/earthquake-connect/styles.css"
+            "earth-intelligence-os/earthquake-connect/app.js"
+          )
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+          for file in "${required_files[@]}"; do
+            if [[ ! -s "$file" ]]; then
+              echo "::error file=$file::Missing or empty required file"
+              exit 1
+            fi
+          done
+
+          echo "Required static website files verified."
+
+      - name: Validate Jekyll configuration
+        shell: ruby
+        run: |
+          require "yaml"
+
+          config = YAML.safe_load_file("_config.yml", aliases: true)
+          abort "Jekyll configuration must be a mapping" unless config.is_a?(Hash)
+
+          puts "Valid Jekyll configuration YAML."
+
+      - name: Install HTML validator
+        run: |
+          python -m pip install \
+            --disable-pip-version-check \
+            --no-cache-dir \
+            html5validator==0.4.2
+
+      - name: Validate HTML documents
+        run: |
+          html5validator \
+            --root . \
+            --match "*.html" \
+            --show-warnings
+
+      - name: Record validation scope
+        shell: bash
+        run: |
+          echo "Static website validation completed."
+          echo "No deployment performed."
+          echo "No DNS, hosting, or production authorization was checked."
