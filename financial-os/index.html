@@ -51,6 +51,26 @@
       </div>
     </section>
 
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Conceptual enterprise architecture</p>
+        <h2>Ten layers with separate control responsibilities</h2>
+        <p>This proposed stack is a design model. Listing a layer does not establish that a corresponding service exists or operates.</p>
+      </div>
+      <div class="card-grid">
+        <article class="card"><span class="card-number">01</span><h3>Executive command center</h3><p>Proposed visibility into financial position, operations, risk, and reporting.</p></article>
+        <article class="card"><span class="card-number">02</span><h3>Financial intelligence</h3><p>Analysis, KPIs, and decision support, separate from system-of-record data.</p></article>
+        <article class="card"><span class="card-number">03</span><h3>System of record</h3><p>General ledger, chart of accounts, consolidation, and financial statements.</p></article>
+        <article class="card"><span class="card-number">04</span><h3>Financial operations</h3><p>Payables, receivables, payroll, inventory, and fixed-asset workflows.</p></article>
+        <article class="card"><span class="card-number">05</span><h3>Treasury &amp; banking</h3><p>Cash and settlement workflows; regulated providers execute regulated financial activity.</p></article>
+        <article class="card"><span class="card-number">06</span><h3>Governance, risk &amp; compliance</h3><p>Proposed segregation of duties, exceptions, control monitoring, and review.</p></article>
+        <article class="card"><span class="card-number">07</span><h3>Analytics &amp; forecasting</h3><p>Revenue, cash, cost, workforce, and demand forecasts remain labeled estimates.</p></article>
+        <article class="card"><span class="card-number">08</span><h3>Integration</h3><p>Potential ERP, CRM, payroll, bank, payment-provider, and tax-system connections.</p></article>
+        <article class="card"><span class="card-number">09</span><h3>Security architecture</h3><p>Identity, access, encryption, device, and approval-control design concepts.</p></article>
+        <article class="card"><span class="card-number">10</span><h3>Audit &amp; history</h3><p>Proposed retention of transactions, approvals, reconciliations, corrections, and evidence.</p></article>
+      </div>
+    </section>
+
     <section class="section" id="modules">
       <div class="section-heading">
         <p class="eyebrow">Proposed modules</p>
@@ -123,6 +143,29 @@
           <p>Proposed KPI reporting, scenario analysis, statistical research, and decision support. Forecasts and models must be identified as such and must not be presented as accounting results.</p>
         </article>
       </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Consolidated volume blueprint</p>
+        <h2>Operational events connect to accounting through controls</h2>
+        <p>These flows describe proposed requirements. Actual accounting treatment and tolerances depend on applicable policy, standards, jurisdiction, and entity facts.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="status-table">
+          <thead><tr><th scope="col">Volume</th><th scope="col">Proposed flow and control principle</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">3 · Transaction processing</th><td>Capture → verify → validate → classify → approve → propose/post → reconcile → preserve evidence. Unbalanced or unauthorized entries should be rejected and retained as reviewable exceptions.</td></tr>
+            <tr><th scope="row">4 · General ledger</th><td>Journal header and lines → validation (debits = credits) → posting → trial balance and statements. Reconcile control accounts to their subledgers.</td></tr>
+            <tr><th scope="row">5 · Procurement &amp; AP</th><td>Request → approval → vendor → purchase order → receipt → invoice match → payment workflow → ledger → audit. Vendor approval, invoice validity, duplicate holds, and independent bank-change verification are proposed controls.</td></tr>
+            <tr><th scope="row">6 · AR &amp; revenue assurance</th><td>Customer/contract → delivery → billing → receivable → collection → cash application → reconciliation. An invoice or forecast alone does not establish revenue recognition.</td></tr>
+            <tr><th scope="row">7 · Inventory &amp; manufacturing</th><td>Demand → procurement → receiving → warehouse → production/WIP → finished goods → sale/COGS → ledger. Inventory subledger-to-ledger reconciliation is required by the proposal.</td></tr>
+            <tr><th scope="row">9 · Payroll &amp; workforce</th><td>Worker → compensation/time → calculation → review/approval → payment provider → subledger → ledger → reconciliation. Payroll calculation is distinct from payment authorization.</td></tr>
+            <tr><th scope="row">10 · Treasury (planned)</th><td>Cash positioning, liquidity, debt, FX, and provider integrations are future scope. Forecasts should disclose assumptions and uncertainty; the platform is not itself a bank.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout"><strong>Financial mathematics are analytical tools, not accounting evidence.</strong> Measures such as working capital, CCC (DIO + DSO − DPO), NPV, IRR, WACC, VaR, or forecast error require defined inputs, assumptions, methods, and review.</div>
     </section>
 
     <section class="section" id="research">
