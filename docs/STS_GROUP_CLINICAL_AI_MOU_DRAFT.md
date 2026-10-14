@@ -20,6 +20,8 @@ The Parties may explore whether a limited, human-governed clinical AI workflow s
 
 This healthcare workstream is separate from any semiconductor, ATMP/OSAT, industrial automation, or investment proposal. It does not validate semiconductor manufacturing capability or establish clinical performance.
 
+If a separate clinical pilot is later approved, its workflow, usability, governance, and audit findings may inform that clinical use case only. They are not evidence of semiconductor customer demand, package yield, manufacturing readiness, or ATMP/OSAT project economics.
+
 ## 2. Potential scope for discussion
 
 Subject to separate approval, the Parties may consider:

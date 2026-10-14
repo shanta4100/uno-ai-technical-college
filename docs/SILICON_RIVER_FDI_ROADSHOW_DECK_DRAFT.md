@@ -121,7 +121,21 @@ Use milestone gates rather than promised calendar outcomes:
 
 Targets such as “200 trained by Year 2,” “export operations by Year 5,” or “multiple customers” require an approved baseline, schedule, budget, owner, and evidence. Until then, they are not commitments.
 
-## Slide 13 — Investment proposition and next step
+## Slide 13 — Evidence-gated execution sequence
+
+The proposed program is organized around three pillars: pilot validation, industrial capability development, and investment readiness. This is a planning sequence—not evidence that any pillar is active or approved.
+
+1. **Clinical or industrial pilot validation:** Proceed only with a willing partner, approved scope, funding, safety and regulatory review, and predefined measures. A healthcare pilot can generate workflow, usability, data-governance, and human-review evidence for that clinical use case. It does not establish semiconductor product demand, manufacturing capability, yield, or facility economics.
+2. **BIDA and semiconductor feasibility:** In parallel or after initial scoping, develop site-selection criteria, workforce and utility requirements, capital and operating estimates, an independently reviewed risk register, and a customer-backed business case. Confirm current incentive eligibility with responsible authorities; do not assume an incentive.
+3. **Investment attraction:** Circulate an FDI deck only when claims are supported by relevant pilot results, completed feasibility studies, workforce plans, a transparent financial model, risk analysis, and verified funding or incentive pathways. If the deck concerns only the semiconductor project, healthcare pilot results should be clearly identified as separate and must not be used as evidence for semiconductor demand or performance.
+
+### Refined external narrative
+
+> This draft organizes the proposed program around three implementation pillars: pilot validation, industrial capability development, and investment readiness. The next steps are to define and, if approved, measure a bounded pilot; complete phased ATMP/OSAT feasibility; and pursue targeted investment only when the evidence supports it.
+
+Do not use language such as “the code is written, and the river is flowing” to imply deployment. Distinguish planning, signed commitments, active work, and verified outcomes.
+
+## Slide 14 — Investment proposition and next step
 
 The investment rationale to test is whether staged ATMP/OSAT capability can achieve commercial viability while contributing to workforce development and supply-chain resilience. Resilience is a public or strategic benefit to measure separately; it does not substitute for returns, customers, yield, or cash flow.
 
