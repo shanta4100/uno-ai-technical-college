@@ -14,6 +14,10 @@ The case for evaluating domestic capability is not that it will necessarily be t
 
 This is a decision framework, not a recommendation to commit capital now. Proceed only when independent evidence supports each stage, risks are allocated transparently, and relevant authorities complete their reviews.
 
+### Executive positioning
+
+GNAIAAAC LLC seeks to support industrial modernization, semiconductor workforce development, advanced-packaging capability, AI-enabled manufacturing, and secure digital infrastructure through practical engineering programs and public-private collaboration. A possible Bangladesh–India semiconductor corridor is a strategic regional collaboration opportunity to assess—not an established partnership, operating corridor, or secured investment.
+
 ## 2. Evidence and maturity classes
 
 Every external presentation and project workstream should label statements using the following categories:
@@ -28,6 +32,18 @@ Every external presentation and project workstream should label statements using
 | **Long-term vision** | A possible future capability or outcome, not a prediction or commitment | Keep explicitly aspirational until supported by evidence and approved decisions |
 
 Do not present a proposed facility, incentive, workforce pipeline, supplier park, or deployment timeline as an existing capability.
+
+### 2.1 Capability maturity by time horizon
+
+The categories below describe technology and program maturity in general, not verified GNAIAAAC capability. “Deployable practice” means established technology may be used in a suitably engineered and authorized project; it does not mean that this organization has implemented, validated, or received approval for it.
+
+| Horizon | Candidate capabilities or programs | Required qualification |
+|---|---|---|
+| **Deployable practice today** | ATMP/OSAT services, semiconductor testing and packaging, VLSI and technician training, cleanroom planning, design services, supplier development, quality-control automation, edge AI, TinyML, predictive maintenance, digital twins, industrial monitoring, smart energy management, and water-quality monitoring | Local facility, team, data, procurement, validation, funding, permits, and operational status must be evidenced separately. |
+| **Medium-term development (3–7 years)** | Potential Bangladesh–India collaboration in chip design, firmware, embedded systems, packaging and testing, workforce exchange, university research, and industrial R&D; AI compute infrastructure, HPC, robotics integration, and smart manufacturing | Requires willing counterparties, feasibility studies, commercial terms, cross-border legal review, infrastructure, and agreed governance. No partner, program, or corridor is assumed. |
+| **Long-term research and vision (7–15+ years)** | Advanced-packaging leadership, chiplet systems, silicon photonics, next-generation AI hardware, quantum-adjacent computing, integrated industrial digital twins, large-scale automation governance, and sovereign digital infrastructure | Treat as research goals or strategic aspirations until there are funded programs, technical evidence, approvals, and a demonstrated operating capability. |
+
+Healthcare-related AI, including clinical decision support or diagnostic pilots, is a separate regulated workstream. Any such activity requires its own willing clinical partner, ethics and institutional approvals, data governance, regulatory review, and clinical validation. It is neither implied by nor evidence for semiconductor manufacturing capability.
 
 ## 3. Strategic objectives and decision principles
 
@@ -84,6 +100,10 @@ Advanced packaging should not be presented as an automatic extension of basic as
 ### Phase 4 — Long-horizon ecosystem options
 
 After periodic independent reviews, stakeholders may consider broader supplier, research, design, or fabrication capabilities. A front-end fab is a separate, substantially more demanding investment decision and is not presumed to follow from an ATMP/OSAT project.
+
+### Regional collaboration option
+
+Bangladesh–India cooperation may be explored as a regional resilience and supply-chain-security opportunity. Candidate areas include training, design and embedded systems, packaging and test, research exchange, and supplier development. Any reference to a bilateral corridor, government MoU, university program, facility access, subsidy, or named corporate partner must be supported by current authoritative evidence and written authorization from the parties concerned. Do not imply that GNAIAAAC is integrated with Indian facilities or eligible for Indian programs without verified agreements and legal review.
 
 ## 5. CHIPS Act and investment-finance architecture
 
@@ -192,20 +212,22 @@ AI may support production planning, predictive maintenance, computer-vision insp
 
 Infrastructure for compute, storage, networks, and data governance should be sized only after use cases are defined. No GNAIAAAC or GNAI-Core operational capability, deployed AI system, or validated efficiency gain is established by this plan.
 
-## 11. Risk register and treatment
+## 11. Executive risk matrix and treatment
 
-| Risk | Example indicators | Candidate treatment and decision owner |
-|---|---|---|
-| Permitting and construction delay | Unresolved approvals, critical-path slippage, contractor availability | Early authority mapping, independent schedule review, contingency, sponsor and authority coordination |
-| Utility constraints | Reliability, quality, capacity, connection schedule, water balance | Site diligence, engineering studies, redundancy design, utility agreements |
-| Demand and utilization | Qualification slippage, order concentration, pricing, utilization ramp | Customer validation, flexible phasing, downside liquidity, board investment gates |
-| Technology and yield | Process maturity, yield learning, reliability, equipment performance | Vendor acceptance, qualification lots, independent engineering and quality review |
-| Imported inputs and FX | Lead times, single-source exposure, currency mismatch | Inventory policy, alternate sources, hedging review, staged localization |
-| Workforce capacity | Vacancies, attrition, competency gaps, instructor constraints | Tiered curricula, employer commitments, training equipment and retention plan |
-| Environmental and social impacts | Water stress, emissions, waste, worker safety, community concerns | Baseline studies, permits, mitigation hierarchy, disclosure, monitoring and grievance channels |
-| Cybersecurity and IP | Unauthorized access, supplier exposure, data leakage, export-control issues | Threat modeling, access controls, incident response, IP and legal controls |
-| Policy or incentive change | Eligibility uncertainty, delayed disbursement, rule changes | Base case excludes unconfirmed support; stress-test conditions and clawbacks |
-| Natural and geopolitical shock | Flood, severe weather, trade restrictions, logistics disruption | Site-specific resilience plan, supplier diversification, continuity and recovery exercises |
+The table is a screening register, not a completed risk assessment. Probability and impact remain **unrated** until site-, project-, and time-specific evidence is collected. Assign ratings using a documented scale, named assessor, date, and rationale; do not infer high/medium/low ratings from this template.
+
+| Risk | Probability | Impact | Example indicators | Candidate treatment and decision owner |
+|---|---|---|---|---|
+| Permitting and construction delay | Unrated | Unrated | Unresolved approvals, critical-path slippage, contractor availability | Early authority mapping, independent schedule review, contingency, sponsor and authority coordination |
+| Utility constraints | Unrated | Unrated | Reliability, quality, capacity, connection schedule, water balance | Site diligence, engineering studies, redundancy design, utility agreements |
+| Demand and utilization | Unrated | Unrated | Qualification slippage, order concentration, pricing, utilization ramp | Customer validation, flexible phasing, downside liquidity, board investment gates |
+| Technology and yield | Unrated | Unrated | Process maturity, yield learning, reliability, equipment performance | Vendor acceptance, qualification lots, independent engineering and quality review |
+| Imported inputs and FX | Unrated | Unrated | Lead times, single-source exposure, currency mismatch | Inventory policy, alternate sources, hedging review, staged localization |
+| Workforce capacity | Unrated | Unrated | Vacancies, attrition, competency gaps, instructor constraints | Tiered curricula, employer commitments, training equipment and retention plan |
+| Environmental and social impacts | Unrated | Unrated | Water stress, emissions, waste, worker safety, community concerns | Baseline studies, permits, mitigation hierarchy, disclosure, monitoring and grievance channels |
+| Cybersecurity and IP | Unrated | Unrated | Unauthorized access, supplier exposure, data leakage, export-control issues | Threat modeling, access controls, incident response, IP and legal controls |
+| Policy or incentive change | Unrated | Unrated | Eligibility uncertainty, delayed disbursement, rule changes | Base case excludes unconfirmed support; stress-test conditions and clawbacks |
+| Natural and geopolitical shock | Unrated | Unrated | Flood, severe weather, trade restrictions, logistics disruption | Site-specific resilience plan, supplier diversification, continuity and recovery exercises |
 
 No risk assessment should call a risk eliminated. Record residual risk, owner, trigger, mitigation status, and acceptance authority.
 
@@ -216,8 +238,8 @@ The ranges below indicate planning horizons only; they are not a committed sched
 | Horizon | Focus | Gate to proceed |
 |---|---|---|
 | **Years 0–2** | Scoping, evidence collection, baseline studies, stakeholder engagement, market and site diligence | Independent feasibility review; no major commitment without verified demand, site and regulatory path |
-| **Years 3–7** | If approved: training capacity, bounded pilots, initial facility construction and qualification | Safety, environmental, utility, customer, financing, and operational readiness reviews |
-| **Years 8–15** | Optimize, diversify customers and services, strengthen suppliers, evaluate advanced packaging | Demonstrated quality, sustainable utilization, finance performance, and customer qualification |
+| **Years 3–7** | If approved: training capacity, bounded pilots, design/embedded-systems capability, regional research options, and initial facility construction and qualification | Safety, environmental, utility, customer, financing, and operational readiness reviews |
+| **Years 8–15** | If evidence supports it: optimize, diversify customers and services, strengthen suppliers, evaluate advanced packaging and industrial AI/robotics | Demonstrated quality, sustainable utilization, finance performance, and customer qualification |
 | **Years 16–25** | Reassess ecosystem expansion, research, new process or packaging capabilities, and regional links | New business case and independent review; no automatic expansion based on sunk cost |
 
 At each gate, stakeholders may proceed, pause, redesign, sell, or stop. Publish periodic progress and impact reports with methods, source dates, and variance from approved assumptions.
@@ -264,6 +286,8 @@ Before an investment recommendation, commission and publish appropriate non-conf
 ## 16. Closing position
 
 This master plan is a structured proposal for evidence gathering and staged decisions. A Bangladesh semiconductor initiative should be advanced only if independent analysis shows that selected capabilities are commercially credible, technically achievable, environmentally and socially responsible, legally authorized, and worth their public and private costs.
+
+The investment-document sequence should follow evidence gates: first complete scoping and feasibility; then develop an ATMP/OSAT work plan and any regional-corridor proposal; prepare an investor presentation only when its assumptions and funding ask are supportable; and maintain this long-range plan as a revisable strategy rather than an activation order. A clinical MoU or pilot, if separately proposed and approved by a real clinical partner, is an independent healthcare workstream and does not validate semiconductor processes or demand.
 
 The long-term vision is a resilient, skills-rich semiconductor ecosystem. It is an aspiration—not a forecast, government commitment, or claim of present capability. Every stage should earn the next stage through verified results.
 
