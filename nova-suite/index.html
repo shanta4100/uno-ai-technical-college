@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="NOVA Enterprise Suite offline company-planning prototype.">
+  <title>NOVA Enterprise Suite · Offline Planning Prototype</title>
+  <link rel="stylesheet" href="app.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="wordmark" href="./">NOVA <span>Enterprise Suite</span></a>
+    <span class="version">v1.1 · Offline planning prototype</span>
+  </header>
+
+  <main id="main">
+    <section class="intro">
+      <p class="eyebrow">Customer-controlled workspace planning</p>
+      <h1>Build your organization blueprint.</h1>
+      <p>Create a local planning profile for your organization, draft governance documents, and export your data when you choose.</p>
+      <div class="notice" role="note">
+        <strong>Prototype boundary:</strong> this page stores profile data only in this browser's local storage. It has no accounts, authentication, encryption, backend, or tenant isolation. Do not enter sensitive, confidential, financial-account, identity, or government information. Nothing is sent to a payment provider, government service, email, SMS, or other external system.
+      </div>
+    </section>
+
+    <section class="workspace" aria-label="Company builder">
+      <aside class="sidebar">
+        <div class="sidebar-heading">
+          <div>
+            <p class="eyebrow">Workspaces</p>
+            <h2>Your profiles</h2>
+          </div>
+          <button class="button button-small" id="new-profile" type="button">＋ New</button>
+        </div>
+        <p class="subtle">Profiles are local to this browser. Export JSON for a backup or handover.</p>
+        <ul class="profile-list" id="profile-list" aria-label="Saved organization profiles"></ul>
+        <div class="sidebar-actions">
+          <button class="button button-secondary" id="export-profile" type="button" disabled>Export selected</button>
+          <label class="button button-secondary file-button" for="import-file">Import JSON</label>
+          <input id="import-file" type="file" accept="application/json,.json" hidden>
+        </div>
+        <p class="subtle" id="storage-state" role="status" aria-live="polite"></p>
+      </aside>
+
+      <div class="editor">
+        <div class="editor-heading">
+          <div>
+            <p class="eyebrow">Company builder</p>
+            <h2 id="editor-title">New organization</h2>
+          </div>
+          <button class="button button-danger" id="delete-profile" type="button" hidden>Delete profile</button>
+        </div>
+
+        <form id="company-form">
+          <fieldset>
+            <legend>Organization profile</legend>
+            <div class="field-grid">
+              <label>Company name <input name="companyName" autocomplete="organization" maxlength="120" required></label>
+              <label>Legal entity type <input name="entityType" maxlength="100" placeholder="Planning entry only"></label>
+              <label>Jurisdiction <input name="jurisdiction" maxlength="100"></label>
+              <label>Industry <input name="industry" maxlength="100"></label>
+              <label>Domain name <input name="domain" maxlength="253" placeholder="example.test"></label>
+              <label>Website <input name="website" type="url" maxlength="500" placeholder="https://example.test"></label>
+              <label>Contact email <input name="contactEmail" type="email" autocomplete="email" maxlength="254"></label>
+              <label>Contact phone <input name="contactPhone" type="tel" autocomplete="tel" maxlength="50"></label>
+              <label class="span-two">Business address <textarea name="address" rows="2" maxlength="500"></textarea></label>
+            </div>
+            <p class="field-hint">Use sample or non-sensitive contact details in this prototype.</p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Leadership planning</legend>
+            <div class="field-grid">
+              <label>CEO <input name="leaderCEO" maxlength="100"></label>
+              <label>CTO <input name="leaderCTO" maxlength="100"></label>
+              <label>COO <input name="leaderCOO" maxlength="100"></label>
+              <label>CFO <input name="leaderCFO" maxlength="100"></label>
+              <label>CISO <input name="leaderCISO" maxlength="100"></label>
+              <label>Compliance officer <input name="leaderCompliance" maxlength="100"></label>
+              <label>Administrator role label <input name="administratorLabel" maxlength="100"></label>
+              <label>Other role label <input name="otherRole" maxlength="100"></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Departments</legend>
+            <div class="check-grid">
+              <label class="check"><input type="checkbox" name="departments" value="Operations"> Operations</label>
+              <label class="check"><input type="checkbox" name="departments" value="Finance"> Finance</label>
+              <label class="check"><input type="checkbox" name="departments" value="Technology"> Technology</label>
+              <label class="check"><input type="checkbox" name="departments" value="Marketing"> Marketing</label>
+              <label class="check"><input type="checkbox" name="departments" value="Compliance"> Compliance</label>
+              <label class="check"><input type="checkbox" name="departments" value="Customer Support"> Customer Support</label>
+              <label class="check"><input type="checkbox" name="departments" value="Human Resources"> Human Resources</label>
+              <label class="check"><input type="checkbox" name="departments" value="Legal"> Legal</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Business model planning</legend>
+            <div class="check-grid">
+              <label class="check"><input type="checkbox" name="businessModels" value="B2B"> B2B · Business to business</label>
+              <label class="check"><input type="checkbox" name="businessModels" value="B2C"> B2C · Business to consumer</label>
+              <label class="check"><input type="checkbox" name="businessModels" value="B2G"> B2G · Business to government</label>
+              <label class="check"><input type="checkbox" name="businessModels" value="Hybrid"> Hybrid</label>
+            </div>
+            <p class="field-hint">Government-related workflows are planning only and do not register vendors, submit proposals, or establish eligibility.</p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Security configuration planning</legend>
+            <p class="field-hint">These are proposed settings for documentation only. No security control is enabled by this form.</p>
+            <div class="field-grid">
+              <label>MFA policy <select name="mfaPolicy"><option value="">Select a planning status</option><option>Not planned</option><option>Planned</option><option>Required by policy (draft)</option></select></label>
+              <label>Passkey policy <select name="passkeyPolicy"><option value="">Select a planning status</option><option>Not planned</option><option>Planned</option><option>Under evaluation</option></select></label>
+              <label>Session timeout target <input name="sessionTimeout" maxlength="80" placeholder="e.g. 30 minutes (proposal)"></label>
+              <label>Audit retention target <input name="auditRetention" maxlength="80" placeholder="e.g. 1 year (proposal)"></label>
+              <label class="span-two">Recovery contact role (do not enter personal details) <input name="recoveryContactRole" maxlength="100" placeholder="e.g. IT administrator"></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Payment provider readiness · planning only</legend>
+            <p class="field-hint">Selecting a provider records interest only. No accounts, checkout, credentials, or transactions are created or connected.</p>
+            <div class="check-grid">
+              <label class="check"><input type="checkbox" name="providers" value="Stripe"> Stripe</label>
+              <label class="check"><input type="checkbox" name="providers" value="PayPal"> PayPal</label>
+              <label class="check"><input type="checkbox" name="providers" value="Adyen"> Adyen</label>
+              <label class="check"><input type="checkbox" name="providers" value="Global Payments"> Global Payments</label>
+              <label class="check"><input type="checkbox" name="providers" value="Apple Pay"> Apple Pay</label>
+              <label class="check"><input type="checkbox" name="providers" value="Google Pay"> Google Pay</label>
+              <label class="check"><input type="checkbox" name="providers" value="ACH"> ACH</label>
+              <label class="check"><input type="checkbox" name="providers" value="SEPA"> SEPA</label>
+              <label class="check"><input type="checkbox" name="providers" value="Bank transfer"> Bank transfer</label>
+              <label class="check"><input type="checkbox" name="providers" value="Other / to evaluate"> Other / to evaluate</label>
+            </div>
+          </fieldset>
+
+          <div class="form-actions">
+            <button class="button button-primary" type="submit">Save local profile</button>
+            <span id="form-status" role="status" aria-live="polite"></span>
+          </div>
+        </form>
+
+        <section class="draft-section" aria-labelledby="draft-title">
+          <div class="editor-heading">
+            <div>
+              <p class="eyebrow">Document starter</p>
+              <h2 id="draft-title">Policy draft templates</h2>
+            </div>
+          </div>
+          <p class="subtle">Generate editable starter text for discussion. These drafts are not legal advice, complete policies, compliance evidence, or certification.</p>
+          <div class="button-row">
+            <button class="button button-secondary policy-button" type="button" data-policy="security">Security planning draft</button>
+            <button class="button button-secondary policy-button" type="button" data-policy="privacy">Privacy planning draft</button>
+            <button class="button button-secondary policy-button" type="button" data-policy="incident">Incident response outline</button>
+          </div>
+          <pre id="policy-output" class="policy-output" tabindex="0">Choose a draft template to display starter text here.</pre>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>NOVA Enterprise Suite v1.1 · Local planning prototype</p>
+    <p>No live authentication, payment processing, communications, government registration, or security controls.</p>
+  </footer>
+</body>
+</html>
