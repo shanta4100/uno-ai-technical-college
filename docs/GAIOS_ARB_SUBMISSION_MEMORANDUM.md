@@ -1,10 +1,10 @@
 # GNAIAAAC LLC™ — Architecture Review Board Submission Memorandum
 
-**To:** Chairperson, Institutional Architecture Review Board  
-**From:** Office of the Prime Architect, GNAIAAAC LLC™ (identifier supplied: `ssgpt6`)  
-**Document reference:** GAIOS-ARB-MEMO-2026-V1  
-**Submission status:** Draft for evaluation; formal review and decision pending  
-**Date supplied:** October 13, 2026  
+**To:** Chairperson, Institutional Architecture Review Board
+**From:** Office of the Prime Architect, GNAIAAAC LLC™ (identifier supplied: `ssgpt6`)
+**Document reference:** GAIOS-ARB-MEMO-2026-V1
+**Submission status:** Draft for evaluation; formal review and decision pending
+**Date supplied:** October 13, 2026
 **Subject:** Request for architecture review and pilot authorization for the Global AI Enterprise Operating System (GAIOS)
 
 > This memorandum records the submitter’s proposed scope and requested decision. It is not evidence of an actual board review, approval, security certification, production deployment, or operational verification. Architecture statements below are design assertions to be evaluated against implementation artifacts and independent evidence.
@@ -81,6 +81,5 @@ No pilot authorization or board determination is recorded in this memorandum. Th
 | Production approval | Not determined |
 | ARB determination | Pending formal review |
 
-**Submitted by:** Arifur Rahman Shanta, Founder and Lead Architect (identity/title supplied by submitter; not independently verified)  
+**Submitted by:** Arifur Rahman Shanta, Founder and Lead Architect (identity/title supplied by submitter; not independently verified)
 **Contact:** `[Insert an approved contact address before external distribution]`
-

@@ -1,9 +1,9 @@
 # GAIOS Phase 2 — Step 1 Database Package
 
-**Status:** Draft implementation baseline; not an approval or production certification  
-**Database target:** PostgreSQL 15+  
-**Migration:** [`gaios/database/migrations/001_initial_schema.sql`](../gaios/database/migrations/001_initial_schema.sql)  
-**Database assertions:** [`gaios/database/tests/001_schema_assertions.sql`](../gaios/database/tests/001_schema_assertions.sql)  
+**Status:** Draft implementation baseline; not an approval or production certification
+**Database target:** PostgreSQL 15+
+**Migration:** [`gaios/database/migrations/001_initial_schema.sql`](../gaios/database/migrations/001_initial_schema.sql)
+**Database assertions:** [`gaios/database/tests/001_schema_assertions.sql`](../gaios/database/tests/001_schema_assertions.sql)
 **CI workflow:** [`.github/workflows/gaios-database.yml`](../.github/workflows/gaios-database.yml)
 
 > This package adds a proposed MVP schema and a disposable CI test database. It does not implement an AMEBA application, CSV ingestion service, analysis/reporting pipeline, authentication provider, or production database deployment.
@@ -44,4 +44,3 @@ The migration includes the seven named MVP structures plus `governance_roles`, a
 The dedicated workflow starts a fresh PostgreSQL 15 service using a run-specific disposable password, applies the migration from its checked-in path, and executes SQL assertions. It does not use production credentials and does not modify the static-site deployment workflow.
 
 The CI checks demonstrate schema behavior in a disposable database; they are not evidence of production deployment, operational security, authentication, human approval UX, or application-level separation of duties.
-

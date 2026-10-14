@@ -5,6 +5,8 @@
 **Status:** Conceptual API and data-model draft. No API server, hazard forecast, live dashboard, authentication service, broadcast service, or production data connector is implemented by this document.  
 **Safety boundary:** Example values below are synthetic illustrations, not observed conditions, calibrated probabilities, warnings, or decision guidance.
 
+See [Earthquake Connect — Scientific Scope and Exclusions](EARTHQUAKE_CONNECT_SCOPE.md) for its evidence labels, exclusions, and review boundaries.
+
 The supplied concept calls for clear separation of observed data, forecasts, research outputs, and simulations. The referenced `Earthquake_Connect_Master_Specification_Release_Review.pdf` was not available in this repository, so conformity with that document cannot be confirmed.
 
 ## Evidence envelope
