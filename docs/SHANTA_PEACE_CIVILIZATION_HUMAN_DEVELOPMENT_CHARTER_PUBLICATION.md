@@ -73,6 +73,99 @@ This proposed charter is intended as a contribution to education, research, hist
 | Final publication date and archive ID | Pending |
 | License and distribution permissions | Pending |
 
+## Charter Body — Peace, Knowledge & Human Development
+
+**Status:** Aspirational principles for education, research, and discussion. This Charter is non-binding by intent and does not claim authority over nations, governments, religions, or institutions. That statement is not a legal opinion; qualified legal review remains pending.
+
+### Preamble
+
+Human civilization has experienced both extraordinary achievement and profound conflict. It has built cities, universities, scientific institutions, libraries, agriculture, healthcare, financial systems, and communications networks, while also enduring war, poverty, famine, organized crime, environmental degradation, instability, and human suffering.
+
+This Charter does not seek to erase history, assign collective blame, or rewrite the past. It seeks to preserve lessons and promote a future informed by knowledge, peace, human dignity, science, innovation, education, environmental stewardship, and responsible governance.
+
+### Article I — Unity of humanity
+
+Humanity shares one planet, atmosphere, biosphere, and future. People belong to different countries, cultures, faiths, languages, traditions, and political systems; all people have equal human dignity.
+
+### Article II — Respect for faith and conscience
+
+The Charter respects Islam, Christianity, Judaism, Hinduism, Buddhism, Sikhism, Indigenous traditions, other faiths, and freedom of conscience. It neither elevates nor diminishes a faith and supports mutual respect, peaceful coexistence, human dignity, and religious freedom.
+
+### Article III — Lessons from war
+
+Historical study may address ancient and civil wars, regional and world wars, terrorism, violent extremism, organized crime, drug trafficking, and cyber conflict. The purpose is learning, prevention, preparedness, reconciliation, and peacebuilding—not glorification, incitement, or collective blame. Specific historical accounts should be supported by reliable sources and contextualized.
+
+### Article IV — Middle East historical studies
+
+The Middle East is a subject of historical, cultural, and scholarly study. Publications concerning the region should be historically grounded, fact-based, respectful, and evidence-led. Research topics may include peacebuilding, education, infrastructure, scientific cooperation, and economic opportunity. Claims about historical contributions and contemporary mechanisms should be sourced and reviewed rather than treated as self-evident.
+
+### Article V — Knowledge over conflict
+
+The Charter proposes these principles:
+
+- Knowledge creates opportunity.
+- Education can expand freedom and understanding.
+- Science can improve quality of life.
+- Cooperation can support stability.
+
+Long-term peace may be supported by education, healthcare, economic participation, clean water, food and energy security, and responsible governance; these are propositions to evaluate, not guarantees.
+
+### Article VI — Peace through development principle
+
+The archive proposes the hypothesis that communities with greater access to education, opportunity, infrastructure, healthcare, and lawful economic activity may experience improved conditions associated with long-term stability. This proposition requires careful empirical evaluation, attention to confounders and context, and evidence that does not imply causation without an appropriate research design.
+
+### Article VII — Science for humanity
+
+Scientific research is encouraged in service of human welfare, environmental stewardship, public health, disaster preparedness, sustainability, and education. Potential domains include water, agriculture, energy, environment, climate, health, space science, and cybersecurity. Research claims require methods, sources, limitations, and appropriate independent review.
+
+### Article VIII — Pure Water Charter
+
+The Charter treats access to safe water as an important human-development objective. Research areas may include water treatment, desalination, groundwater preservation, flood management, safe drinking water, and wastewater recycling. This text does not establish a water service or certify any treatment technology.
+
+### Article IX — Energy for civilization
+
+The Charter supports study of solar, wind, hydropower, geothermal systems, microgrids, and energy storage, with aspirations for low-carbon, reliable, affordable, and resilient energy. Technical feasibility, environmental effects, safety, cost, and local conditions require separate evaluation.
+
+### Article X — Climate and environmental stewardship
+
+Research may address climate adaptation, emissions reduction, forest preservation, biodiversity, pollution reduction, and air quality, including study of the Amazon Basin, mangrove ecosystems, major river systems, and urban air quality. Such work should cite sources, identify geographic and temporal scope, and distinguish observation from model output.
+
+### Article XI — Agriculture and food security
+
+Research goals may include food security, organic and precision agriculture, soil health, water efficiency, and crop productivity. The intended direction is improved food availability, reduced waste, better nutrition, and resilience; outcomes are not guaranteed.
+
+### Article XII — Health and human development
+
+Potential research areas include preventive healthcare, nutrition, public-health education, environmental health, and community wellness.
+
+**Boundary:** Research is not medical treatment or clinical advice. Clinical claims require appropriate evidence and review by qualified professionals.
+
+### Article XIII — Space science and planetary stewardship
+
+Space science may support education, communications, environmental and weather observation, disaster awareness, and scientific discovery. The Charter supports peaceful, lawful, and scientific uses; it does not authorize space operations or represent an active program.
+
+### Article XIV — Future civilization research
+
+Possible scenario horizons include 2030, 2050, 2100, and 2200, with topics such as education, governance, energy, infrastructure, science, and sustainability.
+
+`Scenario ≠ prediction`  
+`Aspiration ≠ guarantee`
+
+### Article XV — Historical integrity
+
+The archive should preserve successes, failures, discoveries, mistakes, experiments, and lessons learned without silently rewriting the historical record. Corrections and revisions should be documented transparently, subject to privacy, safety, legal, and retention obligations.
+
+### Article XVI — Peace through knowledge
+
+The Charter’s central aspirations are peace through knowledge, prosperity through education, progress through science, resilience through innovation, accountability through evidence, and freedom through human dignity.
+
+### Founder’s peace statement
+
+This Charter reflects a long-term aspiration to contribute to a world where knowledge, education, science, innovation, responsible governance, environmental stewardship, and human cooperation support opportunities for peace and human development. Its purpose is to preserve ideas, encourage learning, support lawful innovation, and promote constructive paths toward a more peaceful and sustainable future.
+
+**Archive classification proposed:** Historical, educational, research, and future-civilization charter.  
+**Publication and legal status:** Draft; non-binding and aspirational by intent; legal and publication review pending.
+
 ## Supplement — World Harmony and Human Development Framework
 
 **Status:** Aspirational, voluntary, non-governmental research and education supplement. “Treaty-ready,” “legally neutral,” and similar expressions are not legal conclusions; any proposed legal use requires qualified counsel and review by the relevant parties and jurisdictions.
