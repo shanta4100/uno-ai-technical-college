@@ -44,17 +44,40 @@ The following are source categories and candidate providers named in supplied ma
 
 | Source | Potentially relevant material | Data handling requirement |
 |---|---|---|
-| International Monetary Fund | Macroeconomic, fiscal, and country indicators | Retain series identifiers, release/vintage, units, geography, and revision details |
-| World Bank | Development indicators and country/sector data | Preserve indicator metadata, reporting period, definitions, and source notes |
-| Federal Reserve | U.S. monetary and financial time series | Record series IDs, frequency, seasonal adjustment, units, and revision status |
-| U.S. Treasury | Public finance and debt-related publications/data | Cite the precise dataset, publication date, and definitions |
+| International Monetary Fund | World Economic Outlook (WEO), Fiscal Monitor, and Global Financial Stability Report; candidate variables include growth, inflation, debt, fiscal and current-account balances | Retain series/report identifiers, release/vintage, scenario, units, geography, assumptions, and revisions |
+| World Bank | Global Economic Prospects (GEP), International Debt Statistics, and World Development Indicators; candidate variables include development, debt, poverty, and infrastructure measures | Preserve indicator/report metadata, reporting period, definitions, source notes, and forecast status |
+| Federal Reserve | FRED, H.4.1, Beige Book, and Financial Stability Report | Record series/report identifiers, frequency, seasonal adjustment, units, publication date, and revision status |
+| U.S. Treasury | Public finance, debt, financing, and auction publications/data | Cite the precise dataset, publication date, definitions, and applicable vintage |
 | Bureau of Economic Analysis | U.S. national, regional, and industry accounts | Preserve release vintage, table/series reference, units, and period |
 | Bureau of Labor Statistics | Employment, prices, and labor statistics | Record series identifiers, seasonal adjustment, reference period, and revisions |
 | U.S. Census Bureau | Population, business, and economic statistics | Preserve survey/program, geography, time period, and statistical caveats |
-| NASA public research repositories | Scientific and Earth-observation data where relevant | Treat as scientific source material, not as a general economic authority |
+| Congressional Budget Office | Budget, fiscal, and economic analyses/projections | Preserve report date, projection horizon, assumptions, and scenario |
+| NASA public research repositories | Earth-observation/science datasets, agency budget material, technology roadmaps, or economic-impact studies where relevant | Cite the specific product and methodology; treat as science/technology material, not a primary sovereign macroeconomic forecast |
 | Internal CRM, ERP, user-generated, or research records | Organization-specific information | Require a data owner, lawful purpose, classification, permissions, retention, and provenance |
 
 No live connector or source authorization is established by listing a provider. Store source records separately from normalized values, analytical outputs, estimates, and scenario results.
+
+### Source-segregated data architecture
+
+Maintain institution-specific source records and schema namespaces rather than combining different institutions’ forecasts into a single unattributed value. A conceptual layout might separate `imf`, `world_bank`, `federal_reserve`, `us_treasury`, `bea`, `bls`, `census`, `cbo`, and `nasa` source families. Curated cross-source views may be built only with explicit series mapping, units, geographic/time alignment, release vintages, source citations, and documented reconciliation rules.
+
+Candidate source-specific subject areas—not approved production table names—include:
+
+- **IMF:** WEO growth projections, Fiscal Monitor measures, Global Financial Stability Report indicators.
+- **World Bank:** World Development Indicators, International Debt Statistics, Global Economic Prospects, and relevant poverty/infrastructure measures.
+- **Federal Reserve:** rates, yield curves, reserves, and financial-condition series.
+- **U.S. Treasury:** financing, auction, and debt-structure material.
+- **BEA/BLS/Census/CBO:** national accounts, labor/prices, demographic/business statistics, and fiscal projections.
+- **NASA:** Earth-observation, climate/science datasets, agency budget, and technology/innovation material where relevant.
+
+### Dated publication examples
+
+The following are publication-specific forecast statements, not GAIOS-generated results. Forecasts from separate institutions must remain distinct because their data vintages, assumptions, methods, and scenarios differ.
+
+- The **IMF April 2026 World Economic Outlook** baseline projects global growth of 3.1% in 2026 and 3.2% in 2027. The IMF describes the outlook as subject to downside risks and assumptions about the duration and scope of conflict. See [IMF, World Economic Outlook, April 2026](https://www.imf.org/en/publications/weo/issues/2026/04/14/world-economic-outlook-april-2026).
+- The **World Bank June 2026 Global Economic Prospects** projects growth of 2.5% in 2026, down from 2.9% in 2025, and discusses risks including conflict-related energy-price pressures. See [World Bank, Global Economic Prospects, June 2026](https://www.worldbank.org/en/news/press-release/2026/06/11/global-economic-prospects-june-2026-press-release) and its [report record](https://openknowledge.worldbank.org/entities/publication/e96798d7-a81d-44ea-8287-1b4d6ea83f75).
+
+These headline values are not directly interchangeable or a blended consensus. Verify definitions, publication tables, release vintages, and assumptions before reuse; the cited reports may be revised or superseded.
 
 ### Provenance minimum
 
@@ -85,6 +108,10 @@ Every model or derived result needs a defined target, baseline, held-out evaluat
 ### Mathematical and financial methods
 
 Simple mathematical examples may be used to test software behavior (for example, the arithmetic series `1 + … + n = n(n + 1)/2`). Such examples are not evidence of business performance, risk prediction, or investment return.
+
+Arithmetic checks: for `n = 100`, `n(n + 1)/2 = 5,050`. Factorials include `5! = 120`, `6! = 720`, `7! = 5,040`, `8! = 40,320`, `9! = 362,880`, and `10! = 3,628,800`. These are deterministic mathematical values; combinatorial growth alone does not validate a risk model or forecast.
+
+Illustrative compounding example: with `PV = 1,000`, annual rate `r = 0.15`, and `n = 5`, `FV = PV(1+r)^n ≈ 2,011.36`; the corresponding simple nominal ROI `(FV − PV)/PV ≈ 101.14%`. This assumes a constant annual rate, annual compounding, no fees, taxes, inflation, interim cash flows, or risk adjustment. It is a formula check, not a return expectation or investment projection.
 
 For financial evaluation, define periods, sign conventions, inflation/tax treatment, scenario assumptions, and discount rate explicitly. A standard single-project formulation is:
 
@@ -157,6 +184,8 @@ The proposed Category A (major economic leaders), Category B (advanced developed
 
 Potential opportunity areas include analytics, knowledge workflows, education/workforce programs, and survey intelligence. Validate each by buyer interviews, alternatives/competitors, procurement cycles, willingness to pay, data rights, implementation cost, and service capacity. No market size, regional prioritization, revenue forecast, or investor return is established here.
 
+Statements about sovereign-debt trajectories, borrowing costs, commercial-real-estate stress, AI-infrastructure investment, tokenized assets, stablecoin settlement, or digital-finance growth are research hypotheses unless linked to a defined jurisdiction, period, indicator, source vintage, and analysis. Digital-asset or payment activities require separate legal, regulatory, security, and counterparty assessment.
+
 ## 7. Governance and operational decision gates
 
 Before any pilot, define the bounded workflow, sponsor, data owner, authorized sources, data classification, privacy/security review, role matrix, service boundary, acceptance measures, support owner, incident process, rollback/exit plan, and formal authorization.
@@ -174,4 +203,3 @@ Before broader deployment, require successful pilot evidence, architecture/secur
 | Financial and market projections | Methods described; no validated business case or market study supplied |
 | PostgreSQL governance schema | Draft MVP migration and disposable CI checks exist; not a production deployment |
 | GAIOS approval/readiness | No formal ARB decision, procurement award, customer endorsement, or production authorization established |
-
