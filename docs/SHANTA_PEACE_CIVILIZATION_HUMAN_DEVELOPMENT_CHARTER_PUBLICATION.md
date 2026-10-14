@@ -73,6 +73,89 @@ This proposed charter is intended as a contribution to education, research, hist
 | Final publication date and archive ID | Pending |
 | License and distribution permissions | Pending |
 
+## Supplement — World Harmony and Human Development Framework
+
+**Status:** Aspirational, voluntary, non-governmental research and education supplement. “Treaty-ready,” “legally neutral,” and similar expressions are not legal conclusions; any proposed legal use requires qualified counsel and review by the relevant parties and jurisdictions.
+
+### Preamble
+
+This supplement is founded on the principle that peace may be strengthened when people have access to education, opportunity, clean water, reliable energy, food security, healthcare, scientific knowledge, economic participation, and accountable institutions.
+
+It is intended to support peaceful cooperation, human dignity, knowledge sharing, scientific progress, environmental stewardship, economic opportunity, cultural diversity, national sovereignty, and human rights. It does not advocate for a political ideology, military alliance, religion, nation, government, or economic system. Participation is voluntary and subject to applicable law.
+
+### Common foundation
+
+The framework recognizes shared planetary systems, natural resources, environmental challenges, scientific opportunities, and responsibility for future generations. It respects the diversity and independence of nations and communities and proposes cooperation through lawful, peaceful, voluntary engagement.
+
+### Global harmony principles
+
+- Peace through knowledge.
+- Prosperity through education.
+- Security through cooperation.
+- Resilience through innovation.
+- Opportunity through science.
+- Trust through transparency.
+
+These are guiding aspirations, not guaranteed outcomes or binding obligations.
+
+### Historical learning
+
+Historical study may examine conflict, resource pressures, economic instability, miscommunication, extremism, institutional weaknesses, environmental stress, peace agreements, and reconstruction. These factors interact differently across contexts; no single explanation should be imposed without evidence. The educational purpose is learning, prevention, preparedness, peacebuilding, and human development—not collective blame or incitement.
+
+### World Harmony architecture
+
+| Layer | Example archive or program areas | Intended contribution (hypothesis) |
+|---|---|---|
+| Knowledge | World History Archive, Innovation Chronicle, knowledge graph, education, research encyclopedia | Preserve learning and lessons; support education |
+| Economic opportunity | Shanta Econ, financial education, accounting and economic research | Build financial literacy and transparent planning |
+| Scientific cooperation | Research and science archives, space science, environmental studies, innovation | Support shared problem-solving and collaboration |
+| Human development | Healthcare, education, accessibility, and humanitarian studies | Improve access to learning and opportunity |
+| Environmental stewardship | Climate, water, watershed, Amazon Basin, air-quality, and waste research | Support conservation, resource stewardship, and resilience |
+
+These project areas and benefits are proposed; their existence, implementation, outcomes, and affiliations are not established by this draft.
+
+### Voluntary crisis-response research directions
+
+| Challenge | Possible research and education direction |
+|---|---|
+| Poverty | Education, entrepreneurship, and financial literacy |
+| Water insecurity | Water infrastructure and treatment research |
+| Food insecurity | Agriculture, nutrition, and food-system research |
+| Energy insecurity | Sustainable energy and resilience research |
+| Environmental degradation | Conservation and restoration studies |
+| Economic instability | Accounting, budgeting, and transparency education |
+| Misinformation | Media literacy, education, and knowledge provenance |
+| Social fragmentation | Dialogue and voluntary cooperation initiatives |
+
+These are research directions, not guaranteed remedies, operating services, or policy prescriptions.
+
+### Proposed peace initiatives
+
+- **Education:** Learning access, scientific knowledge, digital literacy, financial literacy, and civic understanding.
+- **Water:** Water security, treatment research, watershed protection, flood resilience, and safe-drinking-water access.
+- **Energy:** Solar energy, microgrids, storage, grid modernization, and energy resilience.
+- **Agriculture:** Soil health, precision and water-efficient farming, food security, and nutrition.
+- **Health:** Nutrition, prevention, public-health education, and environmental health. Research material is not medical advice; clinical claims require qualified validation.
+- **Environment:** Air quality, climate adaptation, forest preservation, pollution reduction, biodiversity, and waste management.
+- **Space for humanity:** Earth observation, disaster and environmental monitoring, communications, and education, for peaceful, lawful, and scientific purposes.
+
+### Future-civilization studies
+
+Possible research horizons include 2030, 2050, 2100, and 2200, covering future education, infrastructure, energy, governance, science, and sustainability.
+
+`Scenario ≠ prediction`  
+`Aspiration ≠ guarantee`
+
+### Project alignment (proposed)
+
+Shanta Econ may support financial-literacy concepts; Shanta Omni-Kernel may document governance and control concepts; the Financial Evidence Chain may explore transparency and auditability; the Continuous Accounting Machine may explore accounting integrity; the World History Archive may support historical learning; and research, science, space, and educational media archives may support knowledge preservation and STEM awareness. These are intended contributions, not verified program capabilities or impacts.
+
+### Founder's harmony statement
+
+The long-term aspiration is to encourage peaceful cooperation through education, science, innovation, transparency, environmental stewardship, and responsible governance. The purpose is to preserve knowledge, expand opportunity, reduce suffering, improve resilience, and support constructive human development—not to exercise authority over nations, governments, religions, institutions, or peoples.
+
+**Supplement closing principles:** Knowledge before conflict · Education before division · Evidence before assumption · Cooperation before hostility · Human dignity above differences · Peace through understanding
+
 ## Annex — Article XVII: Measurable Peace & Human Development Goals
 
 This annex proposes research, educational, development, and voluntary-cooperation objectives. It does not create legally binding commitments, impose targets on any government or community, or guarantee outcomes.
