@@ -22,19 +22,30 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Verify website and Jekyll configuration files
+      - name: Verify required website and configuration files
         shell: bash
         run: |
           set -euo pipefail
 
-          for file in index.html _config.yml; do
+          required_files=(
+            "index.html"
+            "style.css"
+            "_config.yml"
+            "public/index.html"
+            "ssgpt6-preview.html"
+            "earth-intelligence-os/earthquake-connect/index.html"
+            "earth-intelligence-os/earthquake-connect/styles.css"
+            "earth-intelligence-os/earthquake-connect/app.js"
+          )
+
+          for file in "${required_files[@]}"; do
             if [[ ! -s "$file" ]]; then
               echo "::error file=$file::Missing or empty required file"
               exit 1
             fi
           done
 
-          echo "Website and Jekyll configuration files verified."
+          echo "Required static website files verified."
 
       - name: Validate Jekyll configuration
         shell: ruby
@@ -65,6 +76,4 @@ jobs:
         run: |
           echo "Static website validation completed."
           echo "No deployment performed."
-          echo "No Docker containers or database services started."
-          echo "No package-manager workspace execution performed."
-          echo "Validation covered required files, Jekyll YAML, and HTML."
+          echo "No DNS, hosting, or production authorization was checked."
