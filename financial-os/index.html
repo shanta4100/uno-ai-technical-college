@@ -135,8 +135,9 @@
           <ul>
             <li>Monitor, detect, reconcile, analyze, and explain</li>
             <li>Forecast, alert, escalate, document, and recommend</li>
+            <li>Potential audit tests: duplicate-payment/vendor checks, journal and approval testing, segregation-of-duties monitoring, and exception detection</li>
           </ul>
-          <div class="callout"><strong>AI recommendation ≠ authorization.</strong> Material financial, employment, tax, and compliance actions require accountable human or duly authorized system approval.</div>
+          <div class="callout"><strong>AI recommendation ≠ authorization.</strong> The design excludes autonomous fund release, approval overrides, changes to posted accounting, tax filing, audit-evidence deletion, and control bypass. An anomaly means review is needed, not that fraud occurred.</div>
         </article>
         <article class="module">
           <h3>Financial intelligence</h3>
@@ -163,13 +164,13 @@
         <table class="status-table">
           <thead><tr><th scope="col">Volume</th><th scope="col">Proposed flow and control principle</th></tr></thead>
           <tbody>
-            <tr><th scope="row">3 · Transaction processing</th><td>Capture → verify → validate → classify → approve → propose/post → reconcile → preserve evidence. Unbalanced or unauthorized entries should be rejected and retained as reviewable exceptions.</td></tr>
+            <tr><th scope="row">3 · Transaction processing</th><td>Capture → verify → validate → classify → assess tax/risk → approve → post → execute through authorized channels → reconcile → audit. Unbalanced or unauthorized entries should be rejected and retained as reviewable exceptions.</td></tr>
             <tr><th scope="row">4 · General ledger</th><td>Journal header and lines → validation (debits = credits) → posting → trial balance and statements. Reconcile control accounts to their subledgers.</td></tr>
-            <tr><th scope="row">5 · Procurement &amp; AP</th><td>Request → approval → vendor → purchase order → receipt → invoice match → payment workflow → ledger → audit. Vendor approval, invoice validity, duplicate holds, and independent bank-change verification are proposed controls.</td></tr>
-            <tr><th scope="row">6 · AR &amp; revenue assurance</th><td>Customer/contract → delivery → billing → receivable → collection → cash application → reconciliation. An invoice or forecast alone does not establish revenue recognition.</td></tr>
-            <tr><th scope="row">7 · Inventory &amp; manufacturing (planned)</th><td>Demand → procurement → receiving → warehouse → production/WIP → finished goods → sale/COGS → ledger. Potential scope includes costing methods, lot/serial controls, freight and landed cost, planning, and subledger-to-ledger reconciliation.</td></tr>
-            <tr><th scope="row">9 · Payroll &amp; workforce</th><td>Worker → compensation/time → calculation → review/approval → payment provider → subledger → ledger → reconciliation. Payroll calculation is distinct from payment authorization.</td></tr>
-            <tr><th scope="row">10 · Treasury (future)</th><td>Cash positioning, liquidity, debt, FX, covenant monitoring, and provider integrations are future scope. The platform may prepare and reconcile workflows; authorized banks/providers move funds. Forecasts should disclose assumptions and uncertainty.</td></tr>
+            <tr><th scope="row">5 · Procurement &amp; AP</th><td>Request → approval → vendor → purchase order → receipt → invoice match → payment workflow → ledger → audit. Proposed controls: no approved vendor/no payment; no valid invoice/no liability; suspected duplicate/hold; bank change/independent verification; AP subledger reconciles to the GL control account.</td></tr>
+            <tr><th scope="row">6 · AR &amp; revenue assurance</th><td>Customer/contract → delivery → billing → receivable → collection → cash application → reconciliation. Proposed controls distinguish invoice from revenue recognition, require documented billing events, reconcile AR to GL, and distinguish forecast from recognized revenue.</td></tr>
+            <tr><th scope="row">7 · Inventory &amp; manufacturing (planned)</th><td>Demand → procurement → receiving → warehouse → production/WIP → finished goods → sale/COGS → ledger. Potential scope includes costing methods, lot/serial controls, freight, planning, and reconciliation. Inventory roll-forward: beginning + purchases + production receipts − sales − usage − write-offs ± adjustments = ending, subject to defined accounting policies.</td></tr>
+            <tr><th scope="row">9 · Payroll &amp; workforce</th><td>Worker → approved compensation/time → calculation → review/approval → payment provider → subledger → ledger → reconciliation. Payroll calculation is distinct from payment authorization; payroll expense subledger should reconcile to its GL control account.</td></tr>
+            <tr><th scope="row">10 · Treasury (future)</th><td>Cash positioning, liquidity, debt, FX, investment tracking, covenant monitoring, and provider integrations are future scope. Metrics may include cash conversion cycle, liquidity, free cash flow, burn/runway, and debt-service coverage. The platform may prepare/reconcile workflows; authorized banks/providers move funds.</td></tr>
           </tbody>
         </table>
       </div>
@@ -217,7 +218,7 @@
         </article>
         <article class="card">
           <h3>AML/CFT and audit support</h3>
-          <p>Research concepts include monitoring, evidence, investigation support, and authorized review. An exception is not proof of fraud, and AI analysis is not an audit opinion or an enforcement decision.</p>
+          <p>Research concepts include monitoring, evidence, investigation support, and authorized review. Tests may examine duplicate transactions, journal patterns, approvals, and segregation of duties. An exception is not proof of fraud, and AI analysis is not an audit opinion or an enforcement decision.</p>
         </article>
         <article class="card">
           <h3>Cryptography and digital assets</h3>
