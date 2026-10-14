@@ -176,3 +176,37 @@ For external evaluation, a defensible description is: “GAIOS is a proposed ent
 5. **Implementation milestone:** deliver and validate one bounded CSV → analysis → report → evidence → human-review workflow before adding economic feeds, surveys, semantic search, or autonomous tools.
 
 This package is an evaluation baseline, not evidence that engineering mobilization, environment provisioning, pilot authorization, or production readiness has occurred.
+
+## Software control orchestration and operations dashboard
+
+### Proposed purpose and boundary
+
+The GAIOS Control Orchestrator is proposed as a software workflow state engine for analytics jobs, data pipelines, reporting, notifications, and dashboard refreshes. It is not a physical actuation platform: it must not command environmental, fluid, energy, utility, building, industrial, or other infrastructure systems.
+
+No automated action may bypass authentication, authorization, audit recording, or required human review. Any future physical-system integration would require a separate safety and regulatory design and is outside this architecture scope.
+
+### Dual-channel authorization
+
+For explicitly designated high-privilege software transitions, require both a valid local session/permission check and a separate remote authorization result. Define independent trust roots, identity sources, token audience and expiry, nonce/replay handling, revocation, timeout behavior, and evidence requirements before implementation.
+
+If either channel fails, times out, or returns an invalid signature, do not start the protected work. Enter a safe halted/paused state, record the authorization failure where the audit service is available, and alert a human operator. Recovery from the halt requires an authorized human decision; do not silently resume queued work.
+
+### Candidate execution states
+
+`STANDBY` (no active job) → `ACTIVE` (authorized work running) ↔ `PAUSED` (controlled pause) → `EMERGENCY_STOP` (work halted pending investigation).
+
+State names alone do not establish a secure state machine. Define allowed transitions, who may initiate each transition, idempotency, cancellation, timeout, recovery after restart, and audit behavior. `EMERGENCY_STOP` must not imply an automatic infrastructure shutdown or destructive recovery action.
+
+### Proposed backend records
+
+`system_state`, `system_events`, `audit_logs`, `health_metrics`, and `authorization_events` are candidate entities only; they are not included in the current migration. Before adding them, define ownership, retention, append/update semantics, access rules, event ordering, privacy, and reconciliation. Audit failures must have explicit fail-safe behavior.
+
+### Operations Center indicators
+
+Candidate widgets may report service availability, API latency/success/error rates, database connectivity, job counts and runtimes, survey validation/duplicates, pending reviews, authentication/MFA events, permission changes, and privileged actions. Define the data source, owner, collection interval, freshness, denominator, thresholds, and alert route for every metric. Until connected to verified telemetry, display no live values and label prototypes as illustrative.
+
+Suggested meanings are `Green: within defined baseline`, `Yellow: attention required`, and `Red: manual review required`; colors are not current operational status. No uptime, validation, user-count, latency, security-adoption, or processing metrics in supplied mockups are verified results.
+
+### Procurement positioning
+
+A suitable candidate description is: “GAIOS is a proposed analytics, survey-intelligence, knowledge-management, and decision-support platform based on governed data workflows and human review.” This does not represent an operating, accredited, or deployed service.
