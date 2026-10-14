@@ -6,6 +6,8 @@
 **Prepared for:** Discussion with investment, industry, workforce, research, and infrastructure stakeholders  
 **Evidence boundary:** This draft contains no verified site, demand forecast, engineering design, cost estimate, financing commitment, permit, government endorsement, partner commitment, or project authorization. All project-specific conclusions require research and documentary evidence.
 
+This is a concise planning framework, not a completed 20–30-page institutional submission. Expanding it for formal review requires current, cited market, engineering, financial, legal, workforce, environmental, and infrastructure studies.
+
 ## 1. Executive purpose
 
 This framework proposes a staged method for assessing whether Bangladesh can develop competitive semiconductor-related capabilities, beginning with workforce development and a bounded assessment of assembly, testing, marking, and packaging (ATMP/OSAT). It brings together industrial strategy, investment analysis, advanced packaging, infrastructure, workforce, risk, and public governance.
@@ -16,7 +18,9 @@ This is a decision framework, not a recommendation to commit capital now. Procee
 
 ### Executive positioning
 
-GNAIAAAC LLC seeks to support industrial modernization, semiconductor workforce development, advanced-packaging capability, AI-enabled manufacturing, and secure digital infrastructure through practical engineering programs and public-private collaboration. A possible Bangladesh–India semiconductor corridor is a strategic regional collaboration opportunity to assess—not an established partnership, operating corridor, or secured investment.
+GNAIAAAC LLC describes its proposed focus as industrial modernization, semiconductor workforce development, advanced-packaging capability, AI-enabled manufacturing, and secure digital infrastructure through practical engineering programs and potential public-private collaboration. A possible Bangladesh–India semiconductor corridor is a strategic regional collaboration opportunity to assess—not an established partnership, operating corridor, or secured investment.
+
+“Industrial Resilience OS” may be used as a name for a proposed governance-centered architecture for workflow coordination, compliance records, operational analytics, and human-reviewed decision support. This document does not establish that such a platform is implemented, connected to industrial assets, or operating with identity management, predictive maintenance, supply-chain visibility, or digital-twin integrations. Each capability requires separate implementation and verification evidence.
 
 ## 2. Evidence and maturity classes
 
@@ -33,15 +37,17 @@ Every external presentation and project workstream should label statements using
 
 Do not present a proposed facility, incentive, workforce pipeline, supplier park, or deployment timeline as an existing capability.
 
-### 2.1 Capability maturity by time horizon
+### 2.1 Three-tier capability and evidence model
 
-The categories below describe technology and program maturity in general, not verified GNAIAAAC capability. “Deployable practice” means established technology may be used in a suitably engineered and authorized project; it does not mean that this organization has implemented, validated, or received approval for it.
+The tiers distinguish general technical feasibility from this initiative’s actual status. Based on the materials represented in this planning draft, no operating GNAIAAAC semiconductor facility, ATMP production line, clinical AI service, or integrated Industrial Resilience OS is established. A capability belongs in Tier 1 only when an auditable artifact demonstrates it.
 
-| Horizon | Candidate capabilities or programs | Required qualification |
+| Tier | Status and candidate scope | Evidence required |
 |---|---|---|
-| **Deployable practice today** | ATMP/OSAT services, semiconductor testing and packaging, VLSI and technician training, cleanroom planning, design services, supplier development, quality-control automation, edge AI, TinyML, predictive maintenance, digital twins, industrial monitoring, smart energy management, and water-quality monitoring | Local facility, team, data, procurement, validation, funding, permits, and operational status must be evidenced separately. |
-| **Medium-term development (3–7 years)** | Potential Bangladesh–India collaboration in chip design, firmware, embedded systems, packaging and testing, workforce exchange, university research, and industrial R&D; AI compute infrastructure, HPC, robotics integration, and smart manufacturing | Requires willing counterparties, feasibility studies, commercial terms, cross-border legal review, infrastructure, and agreed governance. No partner, program, or corridor is assumed. |
-| **Long-term research and vision (7–15+ years)** | Advanced-packaging leadership, chiplet systems, silicon photonics, next-generation AI hardware, quantum-adjacent computing, integrated industrial digital twins, large-scale automation governance, and sovereign digital infrastructure | Treat as research goals or strategic aspirations until there are funded programs, technical evidence, approvals, and a demonstrated operating capability. |
+| **1 — What exists today** | The available material establishes a planning and architecture concept. It does not establish deployed identity and access management, workflow orchestration, compliance tracking, audit logging, supply-chain visibility, digital-twin integration, predictive maintenance, edge-AI/TinyML operations, semiconductor testing or packaging, an active workforce program, or a clinical AI workflow. These are candidate capabilities, not current operating claims. | For each claimed capability: identify the artifact, owner, version, operating environment, deployment scope, test or audit results, permissions, and date. For a physical facility or program, provide independently verifiable site, equipment, staffing, authorization, and operating evidence. |
+| **2 — Programs proposed for development** | Feasibility work could assess ATMP/OSAT planning, testing and packaging services, workforce and VLSI curricula, design enablement, supplier onboarding, quality-control automation, edge AI, TinyML, predictive maintenance, digital twins, industrial monitoring, smart energy, and water-quality monitoring. Possible Bangladesh–India collaboration areas include chip design, firmware, embedded systems, packaging and testing, workforce exchange, university research, and industrial R&D. | Until there is a documented sponsor, funding, schedule, partner consent, scope, and approved work plan, describe these as proposed—not active development. Cross-border work requires current legal, commercial, export-control, and program-eligibility review. |
+| **3 — Strategic vision (10–30 years)** | Research directions may include advanced-packaging capability, chiplet systems, silicon photonics, next-generation AI hardware, quantum-adjacent computing, integrated industrial digital twins, large-scale automation governance, and resilient digital infrastructure. | Label as long-term research direction or strategic vision. Do not present as forecast, committed capacity, government policy, or existing capability without funded programs, technical evidence, approvals, and demonstrated operation. |
+
+Edge AI, TinyML, digital twins, robotics, semiconductor testing, and packaging are established technology areas in general. Their availability does not by itself demonstrate project readiness, safe operation, customer qualification, or local capability.
 
 Healthcare-related AI, including clinical decision support or diagnostic pilots, is a separate regulated workstream. Any such activity requires its own willing clinical partner, ethics and institutional approvals, data governance, regulatory review, and clinical validation. It is neither implied by nor evidence for semiconductor manufacturing capability.
 
