@@ -7,6 +7,8 @@
 
 See [Earthquake Connect — Scientific Scope and Exclusions](EARTHQUAKE_CONNECT_SCOPE.md) for its evidence labels, exclusions, and review boundaries.
 
+See the [standalone Earthquake Connect reference package](earthquake-connect/) for a separate four-window prototype with attributed USGS observations and unconfigured research, outlook, and weather/simulation panels. It does not replace this offline concept dashboard and is not deployed.
+
 The supplied concept calls for clear separation of observed data, forecasts, research outputs, and simulations. The referenced `Earthquake_Connect_Master_Specification_Release_Review.pdf` was not available in this repository, so conformity with that document cannot be confirmed.
 
 ## Evidence envelope

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SSGPT6 interactive design preview with a coordinate-validation simulation.">
+  <meta name="theme-color" content="#050912">
+  <title>SSGPT6 Interactive Preview</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #050912;
+      --panel: #0b1323;
+      --line: #243149;
+      --muted: #aebcd2;
+      --cyan: #5ee1ff;
+      --gold: #f7cb67;
+    }
+
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: #f5f8ff; font: 16px/1.6 system-ui, sans-serif; }
+    header { padding: 22px 6%; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .brand { color: inherit; font-weight: 800; letter-spacing: .1em; text-decoration: none; }
+    nav { display: flex; gap: 8px; flex-wrap: wrap; }
+    nav a { color: var(--muted); padding: 9px; text-decoration: none; }
+    nav a[aria-current="page"] { color: var(--cyan); border-bottom: 2px solid var(--cyan); }
+    main { max-width: 1050px; margin: auto; padding: 50px 6% 70px; }
+    .eyebrow { color: var(--cyan); letter-spacing: .15em; text-transform: uppercase; font-size: 12px; }
+    h1 { font-size: clamp(44px, 9vw, 88px); line-height: 1; letter-spacing: -.05em; margin: 25px 0; }
+    h1 span { color: var(--gold); }
+    h2 { font-size: 32px; line-height: 1.15; }
+    p { color: var(--muted); max-width: 680px; }
+    .notice { padding: 12px 6%; background: #101d30; color: var(--muted); font-size: 13px; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 30px 0; }
+    .primary, .secondary { padding: 13px 20px; border-radius: 7px; cursor: pointer; font: inherit; font-weight: 700; text-decoration: none; display: inline-block; }
+    .primary { background: var(--cyan); color: var(--bg); border: 0; }
+    .secondary { background: transparent; color: #f5f8ff; border: 1px solid #52617a; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 35px; }
+    .card { background: var(--panel); border: 1px solid var(--line); padding: 25px; border-radius: 12px; }
+    .card small, .pill { color: var(--gold); }
+    label { display: block; margin: 18px 0 6px; }
+    input { width: 100%; max-width: 420px; display: block; padding: 12px; background: var(--bg); border: 1px solid #52617a; color: white; font: inherit; border-radius: 6px; }
+    .page[hidden] { display: none; }
+    :focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+    footer { padding: 22px 6%; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="notice">Interactive design preview · Public website and payment readiness are separate.</div>
+  <header>
+    <a class="brand" href="#home">SSGPT6</a>
+    <nav aria-label="Preview navigation">
+      <a href="#home" data-page="home">Home</a>
+      <a href="#mapping" data-page="mapping">Mapping</a>
+      <a href="#subscriptions" data-page="subscriptions">Subscriptions</a>
+      <a href="#status" data-page="status">Status</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section id="home" class="page">
+      <div class="eyebrow">Software workspace</div>
+      <h1>Your ideas.<br>Your workspace.<br><span>Clear evidence.</span></h1>
+      <p>Explore SSGPT6 software, try the mapping workflow, and discuss subscription access. Each separate project keeps its own identity.</p>
+      <div class="actions">
+        <a class="primary" href="#mapping">Try mapping →</a>
+        <a class="secondary" href="#subscriptions">Subscription enquiries</a>
+      </div>
+      <div class="grid">
+        <article class="card"><small>01 · SIMULATION</small><h2>Mapping</h2><p>Validate sample coordinates without collecting device location.</p></article>
+        <article class="card"><small>02 · RESEARCH</small><h2>Your workspace</h2><p>Research and creation with clear evidence and human review.</p></article>
+        <article class="card"><small>03 · ENQUIRIES</small><h2>Subscription access</h2><p>Confirm pricing, scope, and availability before purchase.</p></article>
+      </div>
+    </section>
+
+    <section id="mapping" class="page" hidden>
+      <div class="eyebrow">Mapping prototype</div>
+      <h2>Validate a destination.</h2>
+      <p class="pill">SIMULATION · No GPS collection, navigation launch, or geofence monitoring.</p>
+      <form id="coordinates" class="card">
+        <label for="lat">Latitude · −90 to 90</label>
+        <input id="lat" name="latitude" value="23.8103" inputmode="decimal" required>
+        <label for="lon">Longitude · −180 to 180</label>
+        <input id="lon" name="longitude" value="90.4125" inputmode="decimal" required>
+        <div class="actions"><button class="primary" type="submit">Validate coordinates</button></div>
+        <p id="result" role="status" aria-live="polite">Not validated yet.</p>
+      </form>
+      <p>Provider integration review and operational acceptance remain pending. Geofencing is disabled.</p>
+    </section>
+
+    <section id="subscriptions" class="page" hidden>
+      <div class="eyebrow">Subscription enquiries</div>
+      <h2>Agree the scope.<br>Then activate access.</h2>
+      <p>Individual, team, and institutional access: request written confirmation of deliverables, pricing, and availability.</p>
+      <div class="actions"><a class="primary" href="mailto:ssgpt6@proton.me?subject=SSGPT6%20subscription%20enquiry">Open email enquiry</a></div>
+      <article class="card"><h2>Checkout is not configured</h2><p>This link opens an email draft. It does not charge you, submit an order, or activate paid access.</p></article>
+    </section>
+
+    <section id="status" class="page" hidden>
+      <div class="eyebrow">Release evidence</div>
+      <h2>Every status has a scope.</h2>
+      <article class="card">
+        <p>Public release authorization: not independently verified.</p>
+        <p>Hosting deployment: not verified in this workspace.</p>
+        <p>Rendering on your device: not verified.</p>
+        <p>Mapping: local coordinate-validation simulation; operational tests pending.</p>
+        <p>Payments and subscriber accounts: not active in this preview.</p>
+        <p>Private research: not included.</p>
+      </article>
+    </section>
+  </main>
+  <footer>SSGPT6 · Navy / cyan / gold · Interactive design preview</footer>
+  <script>
+    (() => {
+      "use strict";
+
+      const pages = [...document.querySelectorAll(".page")];
+      const pageLinks = [...document.querySelectorAll("[data-page]")];
+
+      function showPageFromHash() {
+        const requested = window.location.hash.slice(1) || "home";
+        const activePage = pages.some(page => page.id === requested) ? requested : "home";
+
+        pages.forEach(page => {
+          page.hidden = page.id !== activePage;
+        });
+
+        pageLinks.forEach(link => {
+          if (link.dataset.page === activePage) {
+            link.setAttribute("aria-current", "page");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      }
+
+      window.addEventListener("hashchange", showPageFromHash);
+      window.addEventListener("popstate", showPageFromHash);
+      showPageFromHash();
+
+      document.getElementById("coordinates").addEventListener("submit", event => {
+        event.preventDefault();
+        const latitude = document.getElementById("lat").value.trim();
+        const longitude = document.getElementById("lon").value.trim();
+        const numberPattern = /^[+-]?(?:\d+(?:\.\d*)?|\.\d+)$/;
+        const valid = numberPattern.test(latitude)
+          && numberPattern.test(longitude)
+          && Number.isFinite(Number(latitude))
+          && Number.isFinite(Number(longitude))
+          && Number(latitude) >= -90
+          && Number(latitude) <= 90
+          && Number(longitude) >= -180
+          && Number(longitude) <= 180;
+
+        document.getElementById("result").textContent = valid
+          ? "Valid coordinate ranges. SIMULATION only; accuracy, access, and arrival are not verified."
+          : "Rejected: enter numeric coordinates within the displayed ranges.";
+      });
+    })();
+  </script>
+</body>
+</html>
