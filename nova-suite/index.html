@@ -41,7 +41,7 @@
           <button class="button button-secondary" id="export-all" type="button" disabled>Export all profiles</button>
           <label class="button button-secondary file-button" for="import-file">Import JSON</label>
           <input id="import-file" type="file" accept="application/json,.json" hidden>
-          <button class="button button-secondary" id="print-summary" type="button">Print architecture summary</button>
+          <button class="button button-secondary" id="print-summary-button" type="button">Print architecture summary</button>
         </div>
         <p class="subtle" id="storage-state" role="status" aria-live="polite"></p>
       </aside>
@@ -186,7 +186,7 @@
         </section>
       </div>
     </section>
-    <section id="print-summary" class="print-summary" aria-label="Printable architecture summary" hidden></section>
+    <section id="architecture-summary" class="print-summary" aria-label="Printable architecture summary" hidden></section>
   </main>
 
   <footer class="footer">

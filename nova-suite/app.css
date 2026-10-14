@@ -395,6 +395,34 @@ button:focus-visible,
   margin: .2rem 0;
 }
 
+.print-summary {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+  color: #171717;
+  font-family: Arial, sans-serif;
+}
+
+.print-summary h1,
+.print-summary h2 {
+  color: #171717;
+}
+
+.printing-summary > :not(main),
+.printing-summary main > :not(#architecture-summary) {
+  display: none !important;
+}
+
+.printing-summary #architecture-summary {
+  display: block !important;
+}
+
+.printing-summary {
+  background: white;
+  color: #171717;
+}
+
 @media (max-width: 760px) {
   .workspace {
     grid-template-columns: 1fr;
@@ -411,6 +439,17 @@ button:focus-visible,
 
   .sidebar-actions .button:first-child {
     grid-column: 1 / -1;
+  }
+}
+
+@media print {
+  body.printing-summary #architecture-summary {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: white;
+    color: #171717;
   }
 }
 

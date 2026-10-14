@@ -23,7 +23,7 @@ The supplied v3.0 positioning treats NOVA Enterprise Suite, Sovereign Shield, NO
 
 Supplied v1.1/v2.1 scope includes company profiles, leadership and departments, governance and compliance records, B2B/B2C/B2G planning, customer and vendor workspaces, CRM, portals, reporting, support planning, document and policy starters, architecture notes, and handover/export concepts.
 
-The repository contains a narrower offline demo at [`/nova-suite/`](../nova-suite/): organization and leadership fields, department and business-model choices, security and provider-readiness planning fields, browser-local profile save/delete, JSON import/export, and three draft policy starters. This does **not** implement a CRM backend, customer portals, a website builder, generated policy workspace, workflow automation, multi-user workspaces, authentication, tenant isolation, or handover-report generator.
+The repository contains a narrower offline demo at [`/nova-suite/`](../nova-suite/): organization and leadership fields, department and business-model choices, compliance checklist planning, support-message drafts, security and provider-readiness planning fields, browser-local profile save/delete, individual/all-profile JSON import/export, a printable architecture summary, and three draft policy starters. This does **not** implement a CRM backend, customer portals, a website builder, generated policy workspace, workflow automation, multi-user workspaces, authentication, tenant isolation, or deployed handover services.
 
 ### SOVEREIGN SHIELD
 
@@ -68,7 +68,7 @@ The design principle is to keep source facts and provenance distinct from AI int
 
 ### VEGA NOVA
 
-Supplied materials describe VEGA NOVA as a separate entertainment demonstration with free-play games, virtual points, branding previews, merchandise, and handover exports. They also state there is no real-money gambling, wagering, deposits, withdrawals, cash prizes, or connected gambling payment system. The referenced casino HTML artifacts are absent from this repository, so neither implementation nor those safeguards can be independently verified here. Keep this product separate unless a future integration is specifically built and reviewed.
+Supplied materials describe VEGA NOVA versions 0.1–0.3 as separate entertainment demonstrations with free-play games, virtual points, English/Bangla UI, branding previews, an ordinary-merchandise basket, and handover exports. They state there is no real-money gambling, wagering, deposits, withdrawals, cash prizes, or connected gambling payment system. The referenced casino HTML artifacts are absent from this repository, so these versions, features, and safeguards cannot be independently verified here. Keep this product separate unless a future integration is specifically built and reviewed.
 
 ## Customer, deployment, and integration boundaries
 
@@ -135,9 +135,16 @@ No claim that a concept meets NASA, NSF, or other federal requirements can be ma
 
 NOVA Digital Ecosystem is an early-stage enterprise software initiative comprising NOVA Enterprise Suite, SOVEREIGN SHIELD, NOVA ECON, SS6CONNECT, and related architecture concepts. It is intended to support business operations, governance, security and compliance planning, customer management, financial administration, analytics, and AI-assisted workflow generation. VEGA NOVA is a separate entertainment-demo concept. Current repository evidence is limited to an offline company-planning prototype. Commercial deployment depends on validated customer demand, secure SaaS implementation, lawful procurement and provider onboarding where applicable, independent testing, qualified review, and successful pilots before broad-scale production.
 
+## Separate VEGA NOVA contract material
+
+Supplied material describes a confidential white-label software agreement and handover package, but no executed agreement or editable Word contract is present in this repository. Any future template must leave jurisdiction, intellectual-property election, fees, acceptance criteria, and service levels for the parties to negotiate; contract terms require independent legal review. Handover language should not imply that accepting software eliminates non-excludable liabilities or establishes gambling authorization. The target operating jurisdiction has not been specified.
+
+## Federal research concepts
+
+NASA/NSF-oriented concepts supplied for autonomous systems, geospatial hazard prediction, space-science analytics, scientific data infrastructure, and engineering research are separate proposal ideas—not validated ecosystem capabilities or agency-aligned submissions. A solicitation-specific review of eligibility, scope, evaluation criteria, budget, deliverables, and submission rules is necessary before claiming fit.
+
 ## Investor package
 
 - [14-slide investor pitch](../financial-os/investor-pitch.html)
 - [NOVA offline company-planning demo](../nova-suite/)
 - [Financial OS and portfolio context](../financial-os/)
-
