@@ -81,7 +81,7 @@ BEGIN
 
     blocked := FALSE;
     BEGIN
-        EXECUTE 'TRUNCATE TABLE ring2_evidence_ledger';
+        EXECUTE 'TRUNCATE TABLE ring2_evidence_ledger CASCADE';
     EXCEPTION WHEN SQLSTATE '55000' THEN
         blocked := TRUE;
     END;
@@ -112,4 +112,3 @@ END;
 $$;
 
 ROLLBACK;
-
