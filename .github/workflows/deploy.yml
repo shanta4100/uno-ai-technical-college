@@ -1,38 +1,308 @@
-name: Deploy to GitHub Pages
+name: Static Website Validation
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
+
+  workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  validate:
+    name: Validate Static Website
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
+      - name: Verify required website and configuration files
+        shell: bash
+        run: |
+          set -euo pipefail
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: '.'
+          REQUIRED_FILES=(
+            "index.html"
+            "about.html"
+            "contact.html"
+            "resources.html"
+            "style.css"
+            "README.md"
+            "package.json"
+            "package-lock.json"
+            "turbo.json"
+            "docker-compose.yml"
+          )
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+          for file in "${REQUIRED_FILES[@]}"
+          do
+            if [[ ! -s "$file" ]]; then
+              echo "::error file=$file::Missing or empty required file"
+              exit 1
+            fi
+          done
+
+          echo "Required files verified."
+
+      - name: Validate JSON syntax
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+
+          files = [
+              "package.json",
+              "package-lock.json",
+              "turbo.json"
+          ]
+
+          for name in files:
+              with Path(name).open(
+                  encoding="utf-8"
+              ) as f:
+                  json.load(f)
+
+              print(
+                  f"Valid JSON: {name}"
+              )
+
+      - name: Install validators
+        run: |
+          python -m pip install \
+            --disable-pip-version-check \
+            --no-cache-dir \
+            html5validator==0.4.2 \
+            tinycss2==1.4.0
+
+      - name: Validate HTML documents
+        run: |
+          html5validator \
+            --root . \
+            --match "*.html" \
+            --show-warnings
+
+      - name: Validate CSS syntax
+        shell: python
+        run: |
+          from pathlib import Path
+          import tinycss2
+
+          css_text = Path(
+              "style.css"
+          ).read_text(
+              encoding="utf-8"
+          )
+
+          nodes = tinycss2.parse_stylesheet(
+              css_text,
+              skip_comments=True,
+              skip_whitespace=True
+          )
+
+          errors = []
+
+          def inspect(tokens):
+              for token in tokens:
+
+                  if token.type == "error":
+                      errors.append(
+                          f"line {token.source_line}: "
+                          f"{token.message}"
+                      )
+
+                  if token.type == "qualified-rule":
+                      inspect(
+                          tinycss2.parse_declaration_list(
+                              token.content,
+                              skip_comments=True,
+                              skip_whitespace=True
+                          )
+                      )
+
+                  elif (
+                      token.type == "at-rule"
+                      and token.content is not None
+                  ):
+                      inspect(
+                          tinycss2.parse_rule_list(
+                              token.content,
+                              skip_comments=True,
+                              skip_whitespace=True
+                          )
+                      )
+
+                  elif token.type == "declaration":
+                      inspect(token.value)
+
+          inspect(nodes)
+
+          if errors:
+              raise SystemExit(
+                  "\n".join(errors)
+              )
+
+          print(
+              "CSS parsed without syntax errors."
+          )
+
+      - name: Validate internal links and assets
+        shell: python
+        run: |
+          from html.parser import HTMLParser
+          from pathlib import Path
+          from urllib.parse import (
+              urlsplit,
+              unquote
+          )
+
+          root = Path.cwd().resolve()
+
+          class References(
+              HTMLParser
+          ):
+              def __init__(self):
+                  super().__init__()
+                  self.refs = []
+                  self.ids = set()
+
+              def handle_starttag(
+                  self,
+                  tag,
+                  attrs
+              ):
+                  attrs = dict(attrs)
+
+                  if attrs.get("id"):
+                      self.ids.add(
+                          attrs["id"]
+                      )
+
+                  for field in (
+                      "href",
+                      "src"
+                  ):
+                      if attrs.get(field):
+                          self.refs.append(
+                              attrs[field]
+                          )
+
+          pages = {}
+
+          for page in sorted(
+              root.glob("*.html")
+          ):
+              parser = References()
+
+              parser.feed(
+                  page.read_text(
+                      encoding="utf-8"
+                  )
+              )
+
+              pages[page] = parser
+
+          errors = []
+
+          for page, parser in pages.items():
+
+              for ref in parser.refs:
+
+                  parsed = urlsplit(ref)
+
+                  if (
+                      parsed.scheme
+                      or parsed.netloc
+                      or ref.startswith("//")
+                  ):
+                      continue
+
+                  if not parsed.path:
+                      target = page
+
+                  elif parsed.path.startswith("/"):
+                      target = (
+                          root /
+                          unquote(
+                              parsed.path.lstrip("/")
+                          )
+                      ).resolve()
+
+                  else:
+                      target = (
+                          page.parent /
+                          unquote(
+                              parsed.path
+                          )
+                      ).resolve()
+
+                  try:
+                      target.relative_to(root)
+                  except ValueError:
+                      errors.append(
+                          f"{page.name}: "
+                          f"path escapes repository: "
+                          f"{ref}"
+                      )
+                      continue
+
+                  if not target.exists():
+                      errors.append(
+                          f"{page.name}: "
+                          f"missing target: "
+                          f"{ref}"
+                      )
+                      continue
+
+                  if (
+                      parsed.fragment
+                      and target.suffix.lower()
+                      == ".html"
+                  ):
+                      fragment = unquote(
+                          parsed.fragment
+                      )
+
+                      if (
+                          target in pages
+                          and fragment
+                          not in pages[target].ids
+                      ):
+                          errors.append(
+                              f"{page.name}: "
+                              f"missing fragment: "
+                              f"{ref}"
+                          )
+
+          if errors:
+              raise SystemExit(
+                  "\n".join(errors)
+              )
+
+          print(
+              f"Validated "
+              f"{len(pages)} HTML files."
+          )
+
+      - name: Record validation scope
+        shell: bash
+        run: |
+          echo "Static website validation completed."
+          echo "No deployment performed."
+          echo "No Docker containers started."
+          echo "No PostgreSQL service started."
+          echo "No Redis service started."
+          echo "No Turborepo workspace execution performed."
+          echo "Repository validation scope is limited to:"
+          echo "- File presence"
+          echo "- JSON syntax"
+          echo "- HTML validation"
+          echo "- CSS syntax validation"
+          echo "- Internal file references"
