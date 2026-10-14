@@ -18,6 +18,41 @@ The design principle is:
 
 This is a conceptual organization of responsibilities, not a claim that those services exist or are integrated.
 
+### Candidate TDD requirements
+
+The following functional requirements are proposals for later releases, not delivered capabilities:
+
+| ID | Requirement | Current evidence / boundary |
+|---|---|---|
+| FR-001 | Ingest authoritative economic datasets (IMF, World Bank, Federal Reserve, Treasury, BEA, BLS, Census) | No source connector, source authorization, or scheduled ingest is established |
+| FR-002 | Manage survey campaigns, responses, validation, and analytics | No survey service or collection workflow is established |
+| FR-003 | Index enterprise documents and provide embedding-based retrieval/ranking | No knowledge repository, embedding service, or semantic search is established |
+| FR-004 | Visualize KPI, governance, security, and operational measures | No GAIOS dashboard or production telemetry is established |
+
+The supplied 99.9% uptime, TLS 1.3, AES-256, MFA, RBAC, immutable-record, and horizontal-scaling statements are requirements to define and verify—not achieved properties. Specify service scope and availability measurement, cryptographic and key-management profiles, identity enforcement, audit integrity, workload, and scaling tests before acceptance.
+
+The proposed API gateway and economic, survey, knowledge, analytics, governance, and recovery services are conceptual. The supplied severity responses—log, alert, isolate, or stop workflow—need objective severity criteria, accountable operators, safe failure behavior, escalation, audit records, and tested recovery procedures. Critical events must not trigger unreviewed destructive or external actions.
+
+### Candidate database design disposition
+
+The checked-in PostgreSQL migration is an MVP governance baseline for role assignments, evidence, KPI measurements, recovery events/votes, and chain of custody. It is not a complete production database for every GAIOS domain.
+
+The proposed `economic_sources`, `economic_indicators`, `survey_campaigns`, `survey_responses`, `knowledge_documents`, and `knowledge_chunks` tables are deferred domain-schema proposals. Do not apply them as production DDL without domain-specific requirements and review. Define required fields and constraints, provenance, privacy/retention and deletion rules, authorization, duplicate/idempotency behavior, status transitions, indexing, and migration/restore tests. Survey-response design needs a privacy and data-minimization review; semantic retrieval needs document-level authorization and embedding lifecycle controls.
+
+The supplied recovery/KPI examples use names different from the MVP migration (`event_id` versus `recovery_event_id`, `kpi_name` versus `name`, and `actual_value` versus `measured_value`). Treat them as separate drafts until a versioned migration and compatibility plan reconciles them. Do not add competing definitions of an existing table.
+
+### Candidate Kubernetes and cloud deployment baseline
+
+Candidate namespaces include `gaios-production`, `gaios-governance`, `gaios-knowledge`, `gaios-analytics`, `gaios-monitoring`, and `gaios-research`. Namespace names are not a deployment blueprint or proof of isolation.
+
+Before deployment, define and test namespace ownership, service accounts, workload identity, least-privilege RBAC, default-deny ingress/egress, approved service paths, separate research/production accounts and credentials, ingress/WAF/gateway topology, image provenance/signing, scanning, backup/restore, secrets/key lifecycle, retention, monitoring access, resource limits, rollout/rollback, and incident procedures. The proposed Prometheus, OpenTelemetry, Grafana, and Azure Monitor stack is not configured or connected in this repository.
+
+### Candidate security accreditation baseline
+
+The proposed Entra ID → MFA/Conditional Access → RBAC → gateway → services identity path and controls for encryption, backup, retention, throttling, WAF, network policy, signed images, registry scanning, and dependency verification require implementation and evidence. They must not be labeled “implemented” or “accredited” based on this design.
+
+The incident sequence `Detect → Validate → Contain → Investigate → Recover → Document → Review` is a draft operating model. Define incident authority, evidence preservation, notification, severity triggers, recovery approval, and exercises. Accreditation is a separate assessment with scope, control owners, findings, and an approving authority.
+
 ### 2. Logical architecture
 
 | Layer | Proposed responsibilities | Evidence / status |
@@ -125,3 +160,19 @@ Before provisioning or processing non-synthetic data, obtain documented pilot au
 | ARB decision | Pending formal review |
 
 Do not describe Phase 1 or Phase 2 as complete, a pilot as authorized, security as implemented, or the enterprise as ready without an approving authority and linked evidence for each claim.
+
+## Program transition and procurement position
+
+The supplied statement that Phase 1 is an approved baseline is not supported by an approval record in this repository. Architecture, governance, security, knowledge, recovery, and operations inventories are therefore treated as described design artifacts, not completed or deployed capabilities. “Enterprise Review Ready,” “Procurement Review Ready,” and similar labels require review evidence and must not be used as approvals.
+
+For external evaluation, a defensible description is: “GAIOS is a proposed enterprise intelligence and knowledge-management platform intended to support data governance, analytics, survey workflows, workforce enablement, and evidence-based decision support through human-reviewed processes.” Do not describe it as secure, accredited, autonomous, a financial institution, a government authority, or a critical-infrastructure control platform without substantiation.
+
+### Proposed next deliverables
+
+1. **Highest priority — TDD and architecture diagrams:** define bounded system scope, requirements, service contracts, API catalog, data flows, trust boundaries, controls, topology, operations, and ownership.
+2. **High priority — database design:** retain the tested MVP migration; design domain-specific schemas and retention/audit policies only after requirements, privacy, and access controls are reviewed.
+3. **High priority — security assessment:** threat model, RBAC matrix, key management, audit controls, incident response, and evidence-based accreditation plan.
+4. **Medium priority — Kubernetes blueprint:** manifests, ingress, network policies, secrets, workloads, resource bounds, autoscaling, and recovery, followed by environment-specific tests.
+5. **Implementation milestone:** deliver and validate one bounded CSV → analysis → report → evidence → human-review workflow before adding economic feeds, surveys, semantic search, or autonomous tools.
+
+This package is an evaluation baseline, not evidence that engineering mobilization, environment provisioning, pilot authorization, or production readiness has occurred.
