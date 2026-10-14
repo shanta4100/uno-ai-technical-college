@@ -9,6 +9,8 @@
 
 **Bangladesh as a specialized semiconductor packaging and testing hub supporting regional and global supply chains**
 
+GNAIAAAC LLC is exploring a phased semiconductor packaging, testing, workforce-development, and industrial-automation initiative intended to support regional supply-chain resilience. This is a proposal, not an active deployment or confirmed investment.
+
 Evaluate a staged path beginning with workforce, market, site, and infrastructure diligence before any facility investment. No site, facility, investor, customer, or government endorsement is established by this deck.
 
 ## Slide 2 — Market context
