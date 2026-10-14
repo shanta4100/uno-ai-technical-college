@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Earth Intelligence OS conceptual dashboard mockup. No live data or hazard forecasts are provided.">
+  <title>Guardian Earth Intelligence OS · Concept Mockup</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to dashboard</a>
+  <header class="topbar">
+    <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">G</span><span>GNAIAAAC <small>EARTH INTELLIGENCE OS</small></span></a>
+    <nav aria-label="Main navigation">
+      <a href="#observations">Observations</a>
+      <a href="#validation">Validation</a>
+      <a href="#map">Map architecture</a>
+      <a href="#broadcast">GNAI TV</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <p class="eyebrow">Guardian Earth Intelligence OS · Concept mockup</p>
+      <h1>Observe. Validate. Forecast. Protect.</h1>
+      <p>Evidence-first architecture for observations, research, probabilistic analysis, and human-reviewed resilience workflows.</p>
+      <div class="critical-notice" role="alert">
+        <strong>Not a live monitoring or emergency-warning service.</strong>
+        This static page has no data feeds, map engine, authentication, forecast model, alerting, or active security controls. It must not be used for safety decisions. Use official sources and emergency-management authorities.
+      </div>
+      <p class="ownership-note">GNAIAAAC branding is supplied project material; company ownership, trademarks, and copyright claims are not independently verified here. No founder identity or logo asset is displayed.</p>
+    </section>
+
+    <section class="dashboard-grid" aria-label="Earth intelligence architecture panels">
+      <article class="panel panel-observed" id="observations">
+        <div class="panel-head"><span class="window-number">WINDOW 01</span><span class="state state-off">No live feed</span></div>
+        <h2>External Observation Engine</h2>
+        <p>Provider source names are integration targets only. No provider data is loaded or displayed.</p>
+        <div class="source-list" aria-label="Potential observation sources">
+          <span>USGS</span><span>EMSC</span><span>JMA</span><span>BMKG</span><span>GeoNet</span><span>PHIVOLCS</span>
+        </div>
+        <div class="empty-state">
+          <strong>No observed events available</strong>
+          <span>Connect and verify an authorized data source before showing provider-published observations.</span>
+        </div>
+        <p class="panel-note">Future observation records should preserve provider content, source URL, units, event time, retrieval time, and correction history without AI alteration.</p>
+      </article>
+
+      <article class="panel panel-validation" id="validation">
+        <div class="panel-head"><span class="window-number">WINDOW 02</span><span class="state state-plan">Planned</span></div>
+        <h2>Validation &amp; Comparison Engine</h2>
+        <div class="metric-grid">
+          <div><span>Magnitude comparison</span><strong>—</strong></div>
+          <div><span>Location / depth</span><strong>—</strong></div>
+          <div><span>Agreement / confidence</span><strong>—</strong></div>
+          <div><span>Historical accuracy / drift</span><strong>—</strong></div>
+        </div>
+        <div class="chart-list">
+          <span>Difference chart · no records</span>
+          <span>Error chart · no records</span>
+          <span>Agreement timeline · no records</span>
+          <span>Confidence trend · no records</span>
+        </div>
+        <p class="panel-note">Validation requires documented ground truth, event matching, evaluation period, sample size, metric definitions, and independent review. No model performance is asserted.</p>
+      </article>
+
+      <article class="panel panel-environment">
+        <div class="panel-head"><span class="window-number">WINDOW 03</span><span class="state state-off">No sensors connected</span></div>
+        <h2>Environmental Intelligence</h2>
+        <div class="metric-grid metric-grid-three">
+          <div><span>Pressure</span><strong>—</strong></div><div><span>Humidity</span><strong>—</strong></div>
+          <div><span>Dew point</span><strong>—</strong></div><div><span>Temperature</span><strong>—</strong></div>
+          <div><span>Wind</span><strong>—</strong></div><div><span>Ocean state</span><strong>—</strong></div>
+          <div><span>Solar flux</span><strong>—</strong></div><div><span>Geomagnetic index</span><strong>—</strong></div>
+          <div><span>Lightning density</span><strong>—</strong></div>
+        </div>
+        <h3>Potential correlation studies</h3>
+        <p class="chips"><span>Weather ↔ seismic</span><span>Weather ↔ GPS</span><span>GPS ↔ magnetic</span><span>Magnetic ↔ ocean</span></p>
+        <p class="panel-note">Correlation is not causation. Any analysis requires source provenance, methods, uncertainty reporting, and expert review.</p>
+      </article>
+
+      <article class="panel panel-map" id="map">
+        <div class="panel-head"><span class="window-number">WINDOW 04</span><span class="state state-plan">Map engine not loaded</span></div>
+        <h2>Global Operations Map</h2>
+        <div class="map-placeholder">
+          <div class="globe" aria-hidden="true">◎</div>
+          <p><strong>No map tiles or event layers are connected.</strong><br>CesiumJS is a proposed primary engine; MapLibre is a proposed fallback.</p>
+        </div>
+        <h3>Conceptual layers</h3>
+        <ul class="layer-list">
+          <li>Earthquakes</li><li>Tsunamis</li><li>Volcanoes</li><li>Weather</li><li>Floods</li>
+          <li>Wildfires</li><li>Wildlife</li><li>GPS stations</li><li>Infrastructure</li><li>Satellite view</li>
+          <li>Risk heatmaps</li><li>Confidence heatmaps</li><li>Trust heatmaps</li>
+        </ul>
+        <p class="panel-note">Layers are planned categories, not live maps, alerts, or validated risk assessments.</p>
+      </article>
+
+      <article class="panel panel-decision">
+        <div class="panel-head"><span class="window-number">WINDOW 05 · CONCEPT</span><span class="state state-off">No live decision service</span></div>
+        <h2>AI Decision Center</h2>
+        <p class="global-status">GLOBAL STATUS · UNAVAILABLE</p>
+        <div class="empty-state">
+          <strong>No current outlook</strong>
+          <span>Region, anomaly score, earthquake/tsunami outlook, confidence, and trust are unavailable because no verified feeds or evaluated model are connected.</span>
+        </div>
+        <details class="sample-data">
+          <summary>View a synthetic interface example (not current conditions)</summary>
+          <p><strong>SIMULATION ONLY · NOT A WARNING OR FORECAST</strong></p>
+          <dl>
+            <dt>Demo region</dt><dd>Example only</dd>
+            <dt>Anomaly score</dt><dd>82 · synthetic placeholder</dd>
+            <dt>Earthquake outlook</dt><dd>Elevated · synthetic placeholder</dd>
+            <dt>Tsunami outlook</dt><dd>Low · synthetic placeholder</dd>
+            <dt>Weather influence</dt><dd>Moderate · synthetic placeholder</dd>
+            <dt>Confidence / trust</dt><dd>78% / 84 · synthetic placeholder</dd>
+          </dl>
+        </details>
+      </article>
+
+      <article class="panel panel-math">
+        <div class="panel-head"><span class="window-number">RESEARCH CONCEPT</span><span class="state state-plan">Not computed</span></div>
+        <h2>Guardian Index &amp; Earth Intelligence Kernel</h2>
+        <p class="formula">GI = 100 × (P × C × T × Q)<sup>1/4</sup></p>
+        <p>P = probability · C = confidence · T = validation trust · Q = data quality. Inputs, calibration, missing-data rules, and index meaning require formal research and validation.</p>
+        <p class="formula">EIK = αS + βG + γW + δM + εO + ζH</p>
+        <p>S = seismic · G = GPS · W = weather · M = geomagnetic · O = ocean · H = historical. Weights and outputs are not established; no calculation is performed here.</p>
+      </article>
+
+      <article class="panel panel-security">
+        <div class="panel-head"><span class="window-number">EARTH SHIELD · TARGET CONTROLS</span><span class="state state-plan">Not deployed</span></div>
+        <h2>Sovereign Protection Model</h2>
+        <div class="control-grid">
+          <div><h3>Financial</h3><p>Provider fraud tools, 3-D Secure, dual approval, ACH controls, reconciliation, ledger integrity.</p></div>
+          <div><h3>Network</h3><p>Zero Trust, mTLS, workload identity, secrets/PKI, segmentation, IDS/IPS, SIEM, audit logs.</p></div>
+          <div><h3>Data</h3><p>Tenant isolation, PostgreSQL row-level security, immutable records, hash verification, encrypted backups.</p></div>
+          <div><h3>AI</h3><p>Model registry, versioning, drift detection, validation reports, and human approval.</p></div>
+          <div><h3>Satellite / RF</h3><p>Provider-dependent routing, link monitoring, and signal integrity are future research/integration concepts.</p></div>
+        </div>
+        <p class="panel-note"><strong>None of these controls is active or verified by this mockup.</strong> No provider or satellite connection exists. Security claims require implementation evidence and independent assessment; no system is “100% secure.”</p>
+      </article>
+
+      <article class="panel panel-pillars">
+        <div class="panel-head"><span class="window-number">EARTH SHIELD · RESEARCH PILLARS</span><span class="state state-plan">Conceptual</span></div>
+        <h2>Five-Pillar Architecture</h2>
+        <div class="pillar-list">
+          <p><strong>Earth Engine</strong><span>Earthquakes · faults · GPS · deformation</span></p>
+          <p><strong>Ocean Engine</strong><span>Tsunami · tides · floods · storm surge</span></p>
+          <p><strong>Atmosphere Engine</strong><span>Weather · pressure · wind · humidity · lightning</span></p>
+          <p><strong>Infrastructure Engine</strong><span>Buildings · utilities · roads · bridges · power</span></p>
+          <p><strong>Intelligence Engine</strong><span>PINN · FF-PINN · FNO · PINO · DeepONet · statistical methods</span></p>
+        </div>
+      </article>
+
+      <article class="panel panel-media" id="broadcast">
+        <div class="panel-head"><span class="window-number">GNAI TV</span><span class="state state-plan">Broadcast architecture proposed</span></div>
+        <h2>Global Broadcast Network</h2>
+        <p>Potential sections: Earth Intelligence Live, Earth/Ocean Shield, research hub, validation reports, documentaries, interviews, training, community, and downloads.</p>
+        <div class="schedule">
+          <p><strong>Earth Intelligence Daily</strong><span>Proposed 15-minute briefing</span></p>
+          <p><strong>GNAIAAAC Tech Brief</strong><span>Proposed 30-minute program</span></p>
+          <p><strong>Global Resilience Report</strong><span>Proposed weekly program</span></p>
+        </div>
+        <p class="panel-note">No live broadcast, video hosting, CDN, RSS, podcast, or social-publishing integration is implemented. Domain ownership and availability have not been verified.</p>
+      </article>
+    </section>
+
+    <section class="mission">
+      <p class="eyebrow">Public mission</p>
+      <h2>Observe · Compare · Validate · Forecast · Protect · Recover · Educate · Broadcast</h2>
+      <p>Provide evidence-based probabilistic intelligence as a research and decision-support goal—not exact prediction, official warning, or guaranteed protection.</p>
+      <p class="citation-note">The cited Earthquake Connect specification and Earth Shield source documents were not provided in this repository; claims of alignment remain unverified.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Concept dashboard · No live data, forecasts, authentication, or active security controls</span>
+    <span>Branding and ownership statements supplied for planning; verification pending</span>
+  </footer>
+</body>
+</html>
