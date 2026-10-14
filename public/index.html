@@ -3,121 +3,140 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#07111f">
-  <meta name="description" content="Static AMEBA architecture preview. No live infrastructure, telemetry, or controls are connected.">
-  <title>AMEBA Access · Architecture Preview</title>
+  <meta name="theme-color" content="#0b0f19">
+  <meta name="description" content="AMEBA Access OS decision-support interface preview. No live infrastructure or telemetry is connected.">
+  <title>AMEBA ACCESS OS™ | Architecture Preview</title>
   <style>
     :root {
       color-scheme: dark;
-      --bg: #07111f;
-      --panel: #101d30;
-      --panel-raised: #14243a;
-      --border: #2b405a;
-      --text: #f1f6fc;
-      --muted: #b4c2d4;
-      --cyan: #61dafa;
-      --amber: #ffd166;
-      --red: #ffb4a9;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --bg: #0b0f19;
+      --card: #111827;
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+      --blue: #3b82f6;
+      --green: #10b981;
+      --amber: #fbbf24;
+      --border: #1f2937;
     }
-
     * { box-sizing: border-box; }
-    body { min-width: 320px; margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; }
-    a { color: var(--cyan); }
-    a:hover { color: #a2efff; }
+    body { margin: 0; padding: 24px; background: var(--bg); color: var(--text); font: 16px/1.55 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    a { color: #93c5fd; }
     :focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
-    .skip-link { position: absolute; top: -5rem; left: 1rem; z-index: 2; padding: .7rem; background: var(--text); color: var(--bg); }
+    .skip-link { position: absolute; top: -5rem; left: 1rem; z-index: 2; padding: .7rem; background: white; color: #111827; }
     .skip-link:focus { top: 1rem; }
-    header, footer { border-bottom: 1px solid var(--border); padding: 1rem max(1rem, calc((100% - 1200px) / 2)); }
-    header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
-    .brand { color: var(--text); font-size: 1.1rem; font-weight: 800; letter-spacing: .1em; text-decoration: none; }
-    .classification { color: var(--amber); font-size: .75rem; font-weight: 700; letter-spacing: .12em; }
-    main { width: min(1200px, 100%); margin: 0 auto; padding: 2rem 1rem 4rem; }
-    .eyebrow { color: var(--cyan); font-size: .75rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
-    h1 { margin: .4rem 0; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; }
-    h2 { margin: .2rem 0 .6rem; font-size: 1.25rem; }
-    p { color: var(--muted); }
-    .lead { max-width: 760px; font-size: 1.1rem; }
-    .notice { margin: 1.5rem 0; border: 1px solid #856b31; border-left: 5px solid var(--amber); border-radius: .7rem; background: #211d13; padding: 1rem 1.2rem; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    header { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+    h1 { margin: 0; font-size: clamp(1.25rem, 3vw, 1.7rem); }
+    h1 span { display: block; color: var(--muted); font-size: .85rem; font-weight: 400; }
+    .badge { border: 1px solid #765c24; border-radius: 9999px; padding: 6px 12px; color: var(--amber); font-size: .8rem; font-weight: 700; }
+    .notice { margin-bottom: 24px; border: 1px solid #765c24; border-left: 5px solid var(--amber); border-radius: 8px; background: #211d13; padding: 14px 16px; }
     .notice strong { color: var(--amber); }
-    .notice p { margin-bottom: 0; }
-    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-    article { min-width: 0; border: 1px solid var(--border); border-radius: .8rem; background: var(--panel); padding: 1.2rem; }
-    .state { display: inline-block; margin-bottom: .6rem; border: 1px solid #70534f; border-radius: 999px; padding: .15rem .55rem; color: var(--red); font-size: .7rem; font-weight: 700; letter-spacing: .08em; }
-    dl { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .45rem 1rem; margin: 1rem 0 0; }
-    dt { color: var(--muted); }
-    dd { margin: 0; text-align: right; }
-    .not-connected { color: var(--amber); }
-    .boundary { margin-top: 1rem; border-top: 1px solid var(--border); padding-top: .8rem; font-size: .9rem; }
-    footer { border-top: 1px solid var(--border); border-bottom: 0; color: var(--muted); font-size: .8rem; }
-    @media (max-width: 680px) {
-      header { align-items: flex-start; flex-direction: column; }
-      .grid { grid-template-columns: 1fr; }
-      dl { grid-template-columns: 1fr; }
-      dd { text-align: left; }
-    }
+    .notice p { margin: 5px 0 0; color: #d1d5db; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px; margin-bottom: 24px; }
+    .card { min-width: 0; border: 1px solid var(--border); border-radius: 8px; background: var(--card); padding: 20px; }
+    .card h2 { margin: 0 0 12px; color: var(--muted); font-size: 1rem; }
+    .metric { margin: 8px 0; font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; overflow-wrap: anywhere; }
+    .small { margin: 0; color: var(--muted); font-size: .9rem; }
+    code { color: #93c5fd; }
+    .state { color: var(--amber); }
+    .log-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin: 0 0 12px; }
+    .log-header h2 { margin: 0; font-size: 1.1rem; }
+    .log-actions { display: flex; gap: 8px; }
+    button { min-height: 42px; border: 1px solid #475569; border-radius: 6px; padding: 8px 12px; background: #1f2937; color: var(--text); font: inherit; cursor: pointer; }
+    button:hover { border-color: var(--blue); }
+    button:disabled { cursor: not-allowed; opacity: .65; }
+    .simulation-label { margin: 0 0 8px; color: var(--amber); font-size: .8rem; font-weight: 700; }
+    .log-panel { min-height: 180px; max-height: 280px; overflow: auto; border: 1px solid var(--border); border-radius: 8px; background: #030712; padding: 16px; color: #a7f3d0; font: .85rem/1.7 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; overflow-wrap: anywhere; }
+    .log-entry { border-bottom: 1px solid #172033; padding: 4px 0; }
+    .empty { color: var(--muted); }
+    footer { margin-top: 24px; border-top: 1px solid var(--border); padding-top: 16px; color: var(--muted); font-size: .8rem; }
+    @media (max-width: 560px) { body { padding: 16px; } header { align-items: flex-start; flex-direction: column; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; } }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header>
-    <a class="brand" href="./" aria-label="AMEBA Access architecture preview home">AMEBA ACCESS</a>
-    <span class="classification">STATIC ARCHITECTURE PREVIEW · NOT OPERATIONAL</span>
-  </header>
-  <main id="main">
-    <p class="eyebrow">GNAIAAAC LLC · proposed system architecture</p>
-    <h1>Access and integration overview</h1>
-    <p class="lead">A static presentation of proposed architecture areas. This page does not connect to an edge gateway, Handshake resolver, Cloud Run service, credential vault, or monitoring system.</p>
+  <a class="skip-link" href="#main">Skip to dashboard</a>
+  <main id="main" class="container">
+    <header>
+      <h1>AMEBA ACCESS OS™ <span>Decision-Support Architecture Preview · GNAIAAAC LLC</span></h1>
+      <div class="badge">STATIC PREVIEW · NOT OPERATIONAL</div>
+    </header>
 
-    <section class="notice" aria-labelledby="status-heading">
-      <strong id="status-heading">System status: NOT CONNECTED / NOT VERIFIED</strong>
-      <p>This is not a live operational dashboard. No telemetry, access control, security challenge, audit stream, cloud resource, or uptime check is active through this page. Do not use it to make security or availability decisions.</p>
+    <section class="notice" aria-labelledby="system-status">
+      <strong id="system-status">System status: NOT CONNECTED / NOT VERIFIED</strong>
+      <p>This page is a static interface prototype. It has no live network connection, service telemetry, authentication, security controls, audit stream, or production status. Do not use it to make security, availability, or operational decisions.</p>
     </section>
 
-    <section class="grid" aria-label="Proposed architecture layers">
-      <article>
-        <span class="state">NOT CONNECTED</span>
-        <h2>Decentralized namespace</h2>
-        <p>Handshake namespace and local name-resolution integration are proposed only. A browser’s ability to resolve a name depends on its configured resolver.</p>
-        <dl>
-          <dt>Namespace</dt><dd>ameba/ · proposal</dd>
-          <dt>Resolver status</dt><dd class="not-connected">Not checked here</dd>
-        </dl>
+    <section class="grid" aria-label="Proposed architecture areas">
+      <article class="card">
+        <h2>Network Routing Layer</h2>
+        <div class="metric">Handshake HNS</div>
+        <p class="small">Proposed namespace: <code>ameba/</code>. HNS resolution is not tested or connected by this page.</p>
+        <p class="small state">Resolver status: Not checked</p>
       </article>
-      <article>
-        <span class="state">NOT CONNECTED</span>
-        <h2>Edge request filtering</h2>
-        <p>No Cloudflare Worker source, deployment binding, authentication configuration, or live request telemetry is included in this repository path.</p>
-        <dl>
-          <dt>Worker</dt><dd class="not-connected">Not configured</dd>
-          <dt>Security controls</dt><dd class="not-connected">Not verified</dd>
-        </dl>
+      <article class="card">
+        <h2>Execution Strategy</h2>
+        <div class="metric">Stateless processing · proposed</div>
+        <p class="small">Non-custodial simulation is an intended boundary, not a verified property of a deployed runtime.</p>
+        <p class="small state">Backend: Not connected</p>
       </article>
-      <article>
-        <span class="state">NOT CONNECTED</span>
-        <h2>Analytical backend</h2>
-        <p>A backend processing service is an architecture concept only. No backend health endpoint or runtime data has been supplied.</p>
-        <dl>
-          <dt>Service endpoint</dt><dd class="not-connected">Not configured</dd>
-          <dt>Health status</dt><dd class="not-connected">Unknown</dd>
-        </dl>
-      </article>
-      <article>
-        <span class="state">NOT CONNECTED</span>
-        <h2>Identity and secrets</h2>
-        <p>This static page has no authentication or administrator role. Do not add credentials or secrets to this file or treat its display as an access-control boundary.</p>
-        <dl>
-          <dt>Administrator access</dt><dd class="not-connected">Not implemented</dd>
-          <dt>Secret storage</dt><dd class="not-connected">Not configured</dd>
-        </dl>
+      <article class="card">
+        <h2>Compliance Framework</h2>
+        <div class="metric">Access-control design</div>
+        <p class="small">Security and compliance controls require implementation evidence and independent review.</p>
+        <p class="small state">Controls: Not verified</p>
       </article>
     </section>
 
-    <section class="boundary" aria-labelledby="boundary-heading">
-      <h2 id="boundary-heading">Deployment boundary</h2>
-      <p>Adding this file does not create DNS records, connect a custom domain, deploy a Worker, or authorize access to Cloudflare, Google Cloud, or Handshake infrastructure. The repository’s current deployment workflow validates static content only and does not deploy this page.</p>
+    <section aria-labelledby="log-heading">
+      <div class="log-header">
+        <h2 id="log-heading">Local log visualizer</h2>
+        <div class="log-actions">
+          <button id="add-sample" type="button">Add simulated entry</button>
+          <button id="clear-log" type="button">Clear</button>
+        </div>
+      </div>
+      <p class="simulation-label">SIMULATION ONLY · Generated in this browser for interface demonstration. Not operational telemetry, security events, or audit evidence.</p>
+      <div id="log-panel" class="log-panel" role="log" aria-live="polite" aria-relevant="additions text" aria-label="Synthetic sample log entries">
+        <p class="empty">No sample entries. Choose “Add simulated entry” to display a local example.</p>
+      </div>
     </section>
+
+    <footer>
+      Proposed architecture interface · No Cloudflare Worker, HNS route, Cloud Run backend, credential vault, or live monitoring service is configured here. The repository’s current deployment workflow validates static files and does not deploy this page.
+    </footer>
   </main>
-  <footer>GNAIAAAC LLC · AMEBA Access architecture preview · No live service or production status is asserted.</footer>
+  <script>
+    (() => {
+      "use strict";
+      const examples = [
+        "[SIMULATION] Example request classification; no request was sent.",
+        "[SIMULATION] Example validation outcome; no backend or policy engine was called.",
+        "[SIMULATION] Example lifecycle message; no cloud resource was started or stopped."
+      ];
+      const panel = document.getElementById("log-panel");
+      const addButton = document.getElementById("add-sample");
+
+      addButton.addEventListener("click", () => {
+        const empty = panel.querySelector(".empty");
+        if (empty) empty.remove();
+        const entry = document.createElement("div");
+        entry.className = "log-entry";
+        const time = new Date().toISOString();
+        entry.textContent = `[${time}] ${examples[Math.floor(Math.random() * examples.length)]}`;
+        panel.append(entry);
+        while (panel.children.length > 20) panel.firstElementChild.remove();
+        panel.scrollTop = panel.scrollHeight;
+      });
+
+      document.getElementById("clear-log").addEventListener("click", () => {
+        panel.replaceChildren();
+        const empty = document.createElement("p");
+        empty.className = "empty";
+        empty.textContent = "No sample entries. Choose “Add simulated entry” to display a local example.";
+        panel.append(empty);
+      });
+    })();
+  </script>
 </body>
 </html>
