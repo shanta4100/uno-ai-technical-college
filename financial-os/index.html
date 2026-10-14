@@ -99,9 +99,9 @@
           <h3>GN-AI Finance &amp; Accounting OS™</h3>
           <p>Proposed accounting and reporting workflows:</p>
           <ul>
-            <li>General ledger, journals, trial balance, and financial statements</li>
+            <li>Chart of accounts, general ledger, journals, trial balance, and financial statements</li>
             <li>Accounts payable, accounts receivable, and revenue assurance</li>
-            <li>Budgeting, consolidation, cash-flow reporting, and financial analysis</li>
+            <li>Fixed assets, budgeting, consolidation, cash-flow reporting, and financial analysis</li>
           </ul>
         </article>
         <article class="module">
@@ -182,10 +182,10 @@
         <table class="status-table">
           <thead><tr><th scope="col">Volume</th><th scope="col">Proposed flow and control principle</th></tr></thead>
           <tbody>
-            <tr><th scope="row">3 · Transaction processing</th><td>Capture → verify → validate → classify → assess tax/risk → approve → post → execute through authorized channels → reconcile → audit. Unbalanced or unauthorized entries should be rejected and retained as reviewable exceptions. Proposed segregation of duties separates vendor creation, payment approval, reconciliation, and audit access.</td></tr>
+            <tr><th scope="row">3 · Transaction processing</th><td>Capture → verify → validate → classify → assess tax/risk → approve → post → execute through authorized channels → reconcile → audit. A proposed transaction record can carry entity, department, project, counterparty, currency, jurisdiction, approval/reconciliation state, and evidence reference. Unbalanced or unauthorized entries should be rejected and retained as reviewable exceptions. Segregation of duties separates vendor creation, payment approval, reconciliation, and audit access.</td></tr>
             <tr><th scope="row">4 · General ledger</th><td>Journal header and lines → validation (debits = credits) → posting → trial balance and statements. Reconcile control accounts to their subledgers.</td></tr>
             <tr><th scope="row">5 · Procurement &amp; AP</th><td>Request → budget check → approval → vendor → purchase order → receipt → invoice match → payment workflow → ledger → audit. Proposed controls: approved vendor and valid invoice checks; duplicate/mismatch holds; independent bank-change verification; no silent budget override; AP subledger reconciliation. Risk scores and anomaly flags prompt review, not accusations.</td></tr>
-            <tr><th scope="row">6 · AR &amp; revenue assurance (planned)</th><td>Proposed future flow: customer/contract → delivery → billing → receivable → collection → cash application → reconciliation. An invoice or forecast alone does not establish revenue recognition. Credit-model inputs/version/reviewer should be retained; AI recommendations should not autonomously freeze material customer relationships.</td></tr>
+            <tr><th scope="row">6 · AR &amp; revenue assurance</th><td>Proposed flow: customer/credit → contract/order → delivery → billing event → invoice → receivable → collection → cash application → bank reconciliation. An invoice or forecast alone does not establish revenue recognition. Credit-model inputs/version/reviewer should be retained; AI may recommend review or limits but should not approve credit or autonomously freeze material customer relationships.</td></tr>
             <tr><th scope="row">7 · Inventory &amp; manufacturing (planned)</th><td>Demand → procurement → receiving → warehouse → production/WIP → finished goods → sale/COGS → ledger. Potential scope includes costing methods, lot/serial controls, freight, planning, and reconciliation. Inventory roll-forward: beginning + purchases + production receipts − sales − usage − write-offs ± adjustments = ending, subject to defined accounting policies.</td></tr>
             <tr><th scope="row">9 · Payroll &amp; workforce</th><td>Worker → approved compensation/time → calculation → review/approval → payment provider → subledger → ledger → reconciliation. Payroll calculation is distinct from payment authorization; payroll expense subledger should reconcile to its GL control account.</td></tr>
             <tr><th scope="row">10 · Treasury (future)</th><td>Cash positioning, liquidity, debt, FX, investment tracking, covenant monitoring, and provider integrations are future scope. Metrics may include cash conversion cycle, liquidity, free cash flow, burn/runway, and debt-service coverage. The platform may prepare/reconcile workflows; authorized banks/providers move funds.</td></tr>
@@ -204,7 +204,7 @@
         </article>
         <article class="module">
           <h3>Segregation and exception handling</h3>
-          <p>Design intent separates requester, preparer, approver, payment releaser, reconciler, and auditor where practical. Each exception should retain an owner, due date, cause, corrective action, and resolution history.</p>
+          <p>Design intent separates requester, preparer, approver, payment releaser, reconciler, and auditor where practical. Each material action should record who, what, when, why, evidence, approval, and outcome. Each exception should retain an owner, due date, cause, corrective action, and resolution history.</p>
         </article>
         <article class="module">
           <h3>Illustrative accounting workflow</h3>
