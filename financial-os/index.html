@@ -182,10 +182,10 @@
         <table class="status-table">
           <thead><tr><th scope="col">Volume</th><th scope="col">Proposed flow and control principle</th></tr></thead>
           <tbody>
-            <tr><th scope="row">3 · Transaction processing</th><td>Capture → verify → validate → classify → assess tax/risk → approve → post → execute through authorized channels → reconcile → audit. Unbalanced or unauthorized entries should be rejected and retained as reviewable exceptions.</td></tr>
+            <tr><th scope="row">3 · Transaction processing</th><td>Capture → verify → validate → classify → assess tax/risk → approve → post → execute through authorized channels → reconcile → audit. Unbalanced or unauthorized entries should be rejected and retained as reviewable exceptions. Proposed segregation of duties separates vendor creation, payment approval, reconciliation, and audit access.</td></tr>
             <tr><th scope="row">4 · General ledger</th><td>Journal header and lines → validation (debits = credits) → posting → trial balance and statements. Reconcile control accounts to their subledgers.</td></tr>
-            <tr><th scope="row">5 · Procurement &amp; AP</th><td>Request → approval → vendor → purchase order → receipt → invoice match → payment workflow → ledger → audit. Proposed controls: no approved vendor/no payment; no valid invoice/no liability; suspected duplicate/hold; bank change/independent verification; AP subledger reconciles to the GL control account.</td></tr>
-            <tr><th scope="row">6 · AR &amp; revenue assurance</th><td>Customer/contract → delivery → billing → receivable → collection → cash application → reconciliation. Proposed controls distinguish invoice from revenue recognition, require documented billing events, reconcile AR to GL, and distinguish forecast from recognized revenue. Credit models should retain inputs/version/reviewer; AI recommendations must not automatically freeze material customer relationships.</td></tr>
+            <tr><th scope="row">5 · Procurement &amp; AP</th><td>Request → budget check → approval → vendor → purchase order → receipt → invoice match → payment workflow → ledger → audit. Proposed controls: approved vendor and valid invoice checks; duplicate/mismatch holds; independent bank-change verification; no silent budget override; AP subledger reconciliation. Risk scores and anomaly flags prompt review, not accusations.</td></tr>
+            <tr><th scope="row">6 · AR &amp; revenue assurance (planned)</th><td>Proposed future flow: customer/contract → delivery → billing → receivable → collection → cash application → reconciliation. An invoice or forecast alone does not establish revenue recognition. Credit-model inputs/version/reviewer should be retained; AI recommendations should not autonomously freeze material customer relationships.</td></tr>
             <tr><th scope="row">7 · Inventory &amp; manufacturing (planned)</th><td>Demand → procurement → receiving → warehouse → production/WIP → finished goods → sale/COGS → ledger. Potential scope includes costing methods, lot/serial controls, freight, planning, and reconciliation. Inventory roll-forward: beginning + purchases + production receipts − sales − usage − write-offs ± adjustments = ending, subject to defined accounting policies.</td></tr>
             <tr><th scope="row">9 · Payroll &amp; workforce</th><td>Worker → approved compensation/time → calculation → review/approval → payment provider → subledger → ledger → reconciliation. Payroll calculation is distinct from payment authorization; payroll expense subledger should reconcile to its GL control account.</td></tr>
             <tr><th scope="row">10 · Treasury (future)</th><td>Cash positioning, liquidity, debt, FX, investment tracking, covenant monitoring, and provider integrations are future scope. Metrics may include cash conversion cycle, liquidity, free cash flow, burn/runway, and debt-service coverage. The platform may prepare/reconcile workflows; authorized banks/providers move funds.</td></tr>
@@ -193,6 +193,24 @@
         </table>
       </div>
       <div class="callout"><strong>Financial mathematics are analytical tools, not accounting evidence.</strong> Measures such as working capital, CCC (DIO + DSO − DPO), NPV, IRR, WACC, VaR, or forecast error require defined inputs, assumptions, methods, and review.</div>
+      <div class="module-list">
+        <article class="module">
+          <h3>Proposed procurement and payment controls</h3>
+          <p>Vendor → contract → purchase order → receipt → invoice → approval → payment → settlement → reconciliation. Vendor risk dimensions may inform review, but are not evidence of misconduct. Match exceptions require defined tolerances and documented disposition.</p>
+        </article>
+        <article class="module">
+          <h3>Budget and treasury review</h3>
+          <p>A proposed availability calculation is approved budget less commitments and actual spend. Insufficient budget routes to a hold, approved transfer, or documented exception—not a silent override. Payment proposals may be reviewed against payroll, taxes, debt service, reserves, and liquidity policy.</p>
+        </article>
+        <article class="module">
+          <h3>Segregation and exception handling</h3>
+          <p>Design intent separates requester, preparer, approver, payment releaser, reconciler, and auditor where practical. Each exception should retain an owner, due date, cause, corrective action, and resolution history.</p>
+        </article>
+        <article class="module">
+          <h3>Illustrative accounting workflow</h3>
+          <p>A reviewed invoice may propose debit expense, inventory, or asset; debit recoverable tax where applicable; and credit AP. Settlement may propose debit AP and credit cash. Actual accounts and recognition depend on approved accounting policy and transaction facts.</p>
+        </article>
+      </div>
     </section>
 
     <section class="section" id="research">
