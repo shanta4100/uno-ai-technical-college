@@ -1,16 +1,84 @@
-To proceed with deploying this dashboard component to your student learning portal, here is the clean, production-ready frontend boilerplate. This module implements the System Authentication HUD layout using standard semantic HTML5 and modern utility-based styling, aligned with the UNO AI Technical College Phase 1 responsive guidelines.
-📊 1. Frontend Integration Component (hud-component.html)
-Save this code block as an independent component or embed it directly into the portal.html or index.html file of your static site structure.
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore the proposed SSGPT6 Financial OS and its evidence-governed financial operations and research framework.">
+  <title>SSGPT6 Financial OS | A Governance-First Architecture</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="SSGPT6 Financial OS home">SSGPT6 <span>Financial OS</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#platform">Platform</a>
+      <a href="#principles">Principles</a>
+      <a href="financial-os/">Financial OS</a>
+    </nav>
+  </header>
 
-<!-- System Authentication HUD Component --> <div class="hud-container" style="max-width: 800px; margin: 2rem auto; font-family: 'Courier New', Courier, monospace; background-color: #1a1a1a; color: #ffffff; border: 2px solid #ff6b35; border-radius: 4px; padding: 1.5rem; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">          <!-- HUD Header -->     <div class="hud-header" style="border-bottom: 1px solid #ff6b35; padding-bottom: 0.75rem; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center;">         <h3 style="margin: 0; color: #ff6b35; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px;">             ⚡ SERIES XIII STATUS HUD // CORE_NODE_ACTIVE         </h3>         <span class="status-pulse" style="width: 12px; height: 12px; background-color: #10B981; border-radius: 50%; display: inline-block; box-shadow: 0 0 8px #10B981;"></span>     </div>      <!-- Metrics Table -->     <table style="width: 100%; border-collapse: collapse; text-align: left;">         <thead>             <tr style="border-bottom: 2px solid #ff6b35; color: #ff6b35; text-transform: uppercase; font-size: 0.9rem;">                 <th style="padding: 0.75rem; width: 25%;">Metric</th>                 <th style="padding: 0.75rem; width: 25%;">Status</th>                 <th style="padding: 0.75rem; width: 50%;">Universal Impact Evaluation</th>             </tr>         </thead>         <tbody>             <tr style="border-bottom: 1px solid #333333; font-size: 0.95rem;">                 <td style="padding: 0.75rem; font-weight: bold; color: #ff6b35;">Error Rate</td>                 <td style="padding: 0.75rem; color: #10B981;">0.0000%</td>                 <td style="padding: 0.75rem; color: #cccccc;">DEBUGGED: 100% Data Integrity achieved via predictive logic loop.</td>             </tr>             <tr style="border-bottom: 1px solid #333333; font-size: 0.95rem;">                 <td style="padding: 0.75rem; font-weight: bold; color: #ff6b35;">Speed Matrix</td>                 <td style="padding: 0.75rem; color: #10B981; text-transform: uppercase;">Supernova</td>                 <td style="padding: 0.75rem; color: #cccccc;">OPTIMIZED: 99.9% Latency compression across local system registers.</td>             </tr>             <tr style="border-bottom: 1px solid #333333; font-size: 0.95rem;">                 <td style="padding: 0.75rem; font-weight: bold; color: #ff6b35;">Security Auth</td>                 <td style="padding: 0.75rem; color: #10B981;">VERIFIED</td>                 <td style="padding: 0.75rem; color: #cccccc;">SUPERNATURAL: Neural-Lattice cryptographic handshake online.</td>             </tr>         </tbody>     </table>      <!-- System Log Footer -->     <div class="hud-footer" style="margin-top: 1.25rem; font-size: 0.8rem; color: #888888; text-align: right; font-style: italic;">         System Status Sync Locked // Verification Index: Vol-19-SAGE     </div> </div> 
+  <main id="main">
+    <section class="hero">
+      <p class="eyebrow">A proposed enterprise architecture by GNAIAAAC LLC</p>
+      <h1>Building the future of financial security.</h1>
+      <p class="hero-copy">A governance-first concept for financial operations, accounting workflows, treasury, compliance support, and evidence-led decision intelligence.</p>
+      <div class="actions">
+        <a class="button button-primary" href="financial-os/">Explore Financial OS</a>
+        <a class="button button-secondary" href="#principles">Explore the principles</a>
+      </div>
+      <p class="notice"><strong>Research and architecture concept:</strong> the capabilities described here are not a claim of a live, production-verified service.</p>
+    </section>
 
-📝 2. Student Assignment Module (EXERCISE.md)
-To integrate this directly into your educational syllabus, utilize this challenge configuration to test your students' understanding of DOM manipulation and client-side web updates:
+    <section class="section" id="platform">
+      <div class="section-heading">
+        <p class="eyebrow">One proposed framework</p>
+        <h2>Connected domains. Distinct responsibilities.</h2>
+        <p>The concept connects financial recordkeeping, operating workflows, and research while keeping their authority and evidence boundaries clear.</p>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <span class="card-number">01</span>
+          <h3>Finance &amp; accounting</h3>
+          <p>General ledger, journal workflows, payables, receivables, reporting, and consolidation are proposed system-of-record capabilities.</p>
+        </article>
+        <article class="card">
+          <span class="card-number">02</span>
+          <h3>Treasury &amp; operations</h3>
+          <p>Cash visibility, reconciliation, procurement, inventory, workforce costing, and payment-provider workflows are conceptual operating domains.</p>
+        </article>
+        <article class="card">
+          <span class="card-number">03</span>
+          <h3>Governance &amp; intelligence</h3>
+          <p>Evidence management, compliance workflows, analytics, forecasting, education, and AI-assisted recommendations remain distinct from accounting facts.</p>
+        </article>
+      </div>
+    </section>
 
-# Student Lab Assignment: Dynamic HUD Updates  ## Objective Students will write client-side JavaScript to fetch status metrics from a simulated JSON engine and dynamically update the `System Authentication HUD` interface without refreshing the browser layout page.  ## Core Tasks 1. Assign unique operational `id` tags to the HTML status fields (Error Rate, Speed Matrix, Security Auth). 2. Code a lightweight JavaScript interval looping function (`setInterval`) that checks for network baseline metrics every 5000 milliseconds. 3. Inject the data dynamically using safe, verified `textContent` node updates to prevent cross-site scripting vulnerabilities. 
+    <section class="principles" id="principles">
+      <div>
+        <p class="eyebrow">Governance by design</p>
+        <h2>Recommendations support people.<br>They do not replace authority.</h2>
+      </div>
+      <div class="principle-list">
+        <p><span>Financial fact</span><b>≠</b><span>Forecast or simulation</span></p>
+        <p><span>AI recommendation</span><b>≠</b><span>Human authorization</span></p>
+        <p><span>Deployment</span><b>≠</b><span>Verified production</span></p>
+        <p><span>Audit</span><b>≠</b><span>Regulatory approval</span></p>
+      </div>
+    </section>
 
+    <section class="section closing">
+      <p class="eyebrow">Learn more</p>
+      <h2>Explore the proposed Financial OS architecture.</h2>
+      <p>Review the conceptual modules, research domains, maturity vocabulary, and important operating boundaries.</p>
+      <a class="button button-primary" href="financial-os/">Explore Financial OS</a>
+    </section>
+  </main>
 
-To finalize the presentation framework on your active academy dashboard, let me know:
-
-	•	Should we generate an interactive interactive multiple-choice quiz based on these HTML table layouts and core CSS rules for the student testing suite?
-	•	Would you like the standalone JavaScript validation script to simulate real-time latency changes on the data rows?
+  <footer class="site-footer">
+    <p>SSGPT6 Financial OS™ · Powered by GNAIAAAC LLC™</p>
+    <p>Where trust meets innovation.</p>
+  </footer>
+</body>
+</html>
